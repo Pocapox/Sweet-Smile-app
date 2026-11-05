@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Sweet Smile - Pastry &amp; Bakery Manager</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed-dim": "#aec6ff", "on-primary-container": "#fefcff", "on-error": "#ffffff", "tertiary-container": "#db313f", "surface-bright": "#f9f9ff", "secondary-container": "#afcafe", "surface-variant": "#dde2f5", "error": "#ba1a1a", "inverse-on-surface": "#edf0ff", "primary": "#345aa0", "on-background": "#151b29", "on-primary-fixed-variant": "#1a4589", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdad8", "secondary": "#445f8c", "inverse-primary": "#aec6ff", "on-tertiary-container": "#fffbff", "surface-dim": "#d4daec", "on-error-container": "#93000a", "surface-tint": "#375da3", "outline-variant": "#c3c6d2", "on-primary-fixed": "#001a42", "tertiary-fixed-dim": "#ffb3b1", "secondary-fixed-dim": "#acc7fb", "on-surface": "#151b29", "primary-fixed": "#d8e2ff", "on-secondary-fixed": "#001b3e", "on-tertiary-fixed-variant": "#92001c", "inverse-surface": "#2a303f", "on-secondary-fixed-variant": "#2b4773", "surface-container-low": "#f1f3ff", "outline": "#747782", "surface": "#f9f9ff", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-highest": "#dde2f5", "on-secondary-container": "#395581", "surface-container": "#e9edff", "on-tertiary-fixed": "#410007", "secondary-fixed": "#d6e3ff", "primary-container": "#4f73bb", "background": "#f9f9ff", "surface-container-high": "#e2e8fb", "on-surface-variant": "#434751", "tertiary": "#b7102a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xs": "0.25rem", "space-sm": "0.75rem", "margin-desktop": "2.5rem", "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1.25rem", "space-lg": "1.5rem", "margin": "1rem", "space-xl": "2rem", "gutter-desktop": "1.75rem", "space-2xl": "3rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "data-metric": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "data-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 shadow-[0_2px_8px_rgba(52,90,160,0.08)]"><span class="material-symbols-outlined text-[22px]">bakery_dining</span></div><div class="min-w-0 flex flex-col"><div class="flex items-center gap-1 cursor-pointer"><span class="font-label-sm text-primary tracking-wider uppercase truncate">Sweet Smile Pastry</span><span class="material-symbols-outlined text-[16px] text-primary flex-shrink-0">expand_more</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Ventas &amp; Facturas</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Alertas y Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center p-0.5 rounded-full bg-surface-container-high"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Vr255DdZtDDpn27qlUs8yMsiPTGQklYKkIxGFs5rCT1lh2y0wOIHOLuxasrcUBXguUmKRDJZphMCuPz4JEWSI9aKkqwPLecz3bQvXJ8hPlyPGLRvmTC2DN0dFfKSZX9j1apKGuuP7t1722k8EsNTwxm9r4v7_WzmyxJHUr-xAzBdkDBeaIjaQ0Zy_HOvdCrc3zHyRnTXfzuULx9ZNNgb_03db3q6EIQ-GL2Wbk-ScRNwdamQGZB3Bd"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28 min-h-screen"><div class="flex flex-col w-full px-margin pb-6 gap-space-md">
+<!-- Buscador rápido & Lector de Barra -->
+<div class="flex items-center gap-space-xs mt-space-xs">
+<div class="flex-1 flex items-center bg-surface-container-low rounded-xl px-space-sm py-2 shadow-sm transition-all focus-within:bg-surface-container-lowest focus-within:shadow-md">
+<span class="material-symbols-outlined text-outline text-[20px] mr-2">search</span>
+<input autocomplete="off" class="w-full bg-transparent border-0 outline-none text-on-surface font-body-md placeholder:text-outline text-body-md" id="posSearch" placeholder="Buscar dulce o escanear..." type="text"/>
+<button class="hidden text-outline hover:text-on-surface p-1" id="clearSearch" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<button aria-label="Escanear Código de Barras" class="w-11 h-11 flex-shrink-0 bg-secondary-container text-on-secondary-container rounded-xl flex items-center justify-center shadow-sm hover:scale-95 active:scale-90 transition-transform" id="barcodeBtn" type="button">
+<span class="material-symbols-outlined text-[22px]">barcode_scanner</span>
+</button>
+<button class="w-11 h-11 flex-shrink-0 bg-surface-container-high text-primary rounded-xl flex items-center justify-center shadow-sm hover:bg-surface-container transition-colors" id="orderTypeToggle" title="Tipo de comprobante" type="button">
+<span class="material-symbols-outlined text-[22px]" id="docTypeIcon">receipt_long</span>
+</button>
+</div>
+<!-- Selector Comprobante & Cliente Rápido (Desplegable sutil) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">badge</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Facturación</span>
+</div>
+<div class="flex bg-surface-container rounded-lg p-0.5" id="billingSegment">
+<button class="px-2.5 py-1 rounded-md text-label-sm font-label-sm bg-surface-container-lowest text-primary shadow-xs transition-all" data-type="ticket" type="button">Ticket</button>
+<button class="px-2.5 py-1 rounded-md text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface transition-all" data-type="factura" type="button">Factura Fiscal</button>
+</div>
+</div>
+<div class="hidden pt-1 flex flex-col gap-1.5 transition-all" id="customerDetailsPanel">
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-low px-2.5 py-1.5 rounded-lg text-body-sm font-body-sm text-on-surface outline-none placeholder:text-outline" placeholder="RUT / RFC / DNI" type="text"/>
+<input class="flex-1 bg-surface-container-low px-2.5 py-1.5 rounded-lg text-body-sm font-body-sm text-on-surface outline-none placeholder:text-outline" placeholder="Razón Social / Cliente" type="text"/>
+</div>
+</div>
+</div>
+<!-- Selector de categorías en pills horizontales -->
+<div class="overflow-x-auto -mx-margin px-margin py-0.5 flex items-center gap-2 no-scrollbar">
+<button class="cat-pill flex-shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm hover:shadow transition-all" data-cat="all" type="button">
+      Todo (5)
+    </button>
+<button class="cat-pill flex-shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-cat="pasteles" type="button">
+      Pasteles
+    </button>
+<button class="cat-pill flex-shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-cat="cupcakes" type="button">
+      Cupcakes
+    </button>
+<button class="cat-pill flex-shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-cat="galletas" type="button">
+      Galletas
+    </button>
+<button class="cat-pill flex-shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-cat="postres" type="button">
+      Postres Fríos
+    </button>
+<button class="cat-pill flex-shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-cat="bebidas" type="button">
+      Bebidas
+    </button>
+</div>
+<!-- Acciones Rápidas: Descuentos y Propinas -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md transition-colors shadow-xs" id="quickDiscountBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">percent</span>
+<span id="discountLabel">Descuento (0%)</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-md text-label-md transition-colors shadow-xs" id="quickTipBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+<span id="tipLabel">Propina ($0.00)</span>
+</button>
+</div>
+<!-- Cuadrícula / Catálogo de Productos -->
+<div class="flex flex-col gap-space-sm" id="productList">
+<!-- Item 1: Red Velvet -->
+<div class="product-item bg-surface-container-lowest rounded-2xl p-space-sm shadow-sm flex items-center justify-between gap-space-sm hover:shadow-md transition-all active:scale-[0.99]" data-cat="pasteles" data-id="p1" data-name="pastel red velvet (8 porc.)" data-price="28.00" data-stock="4">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Exquisite artisanal 8-portion Red Velvet cake layered with silky cream cheese frosting, topped with ruby cake crumbles and delicate candied cherries, soft pastel boutique studio lighting, photorealistic gourmet pastry style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEjgP9WLGhKmmRngYIvpMy5bizc9gvxS7KvmL8ZSYsRyFgm1Wb--rtADIk1OAqLC5weD7EMfY0jpdq-yi4fn2vHxTl_en-_GA-s67Pmn-xiaYdHK61dPk8ubiOmydhDL4aqHLOziZqjInpsY8xQsKlvRuC0mi9Aj30W_M6ErqflejfA26jxBQao_NqIPO7JRvIqq-ZoI3fdM15aalvDb9n6ObkQy_iJYLsA9_cQQ"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-tertiary-fixed text-on-tertiary-fixed flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          4 disp.
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase">Pasteles</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Pastel Red Velvet (8 porc.)</h2>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">$28.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ unidad</span>
+</div>
+</div>
+<button aria-label="Agregar Pastel Red Velvet" class="add-to-cart-btn w-12 h-12 rounded-xl bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center shadow-xs transition-colors flex-shrink-0 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[24px]">add_shopping_cart</span>
+</button>
+</div>
+<!-- Item 2: Cupcake Vainilla & Cereza -->
+<div class="product-item bg-surface-container-lowest rounded-2xl p-space-sm shadow-sm flex items-center justify-between gap-space-sm hover:shadow-md transition-all active:scale-[0.99]" data-cat="cupcakes" data-id="p2" data-name="cupcake de vainilla &amp; cereza" data-price="3.50" data-stock="18">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Gourmet vanilla cupcake crowned with glossy whipped butter cream, glistening maraschino cherry glaze on top, pastel periwinkle and soft cream bakery aesthetics, crisp macro pastry photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuYmob8U8YDFdUIx43cCnc76Fzoi4rOPEXrj_ChPPuLnyYnhQMzc8bEtOs71D-wfq56__PYppUUO573t6oJhWmqMqHO-xv5jSi94MKpqK1UDVZLBErkxWsZLl4JdChxUP9HiCRFAxYnSxryy_WbBNq9oMiLHX28vnTxehDgWVJcd6osJHtJ-phsanzMJUfW9vtnMSnBHO0ZWUbl5F4sK1FW8QC7PkVQpsaQVM-gg"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-secondary-fixed text-on-secondary-fixed">
+          18 disp.
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Cupcakes</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Cupcake de Vainilla &amp; Cereza</h2>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">$3.50</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ porción</span>
+</div>
+</div>
+<button aria-label="Agregar Cupcake Vainilla" class="add-to-cart-btn w-12 h-12 rounded-xl bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center shadow-xs transition-colors flex-shrink-0 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[24px]">add_shopping_cart</span>
+</button>
+</div>
+<!-- Item 3: Tarta Frutos Rojos (Alerta Bajo Stock) -->
+<div class="product-item bg-surface-container-lowest rounded-2xl p-space-sm shadow-sm flex items-center justify-between gap-space-sm hover:shadow-md transition-all active:scale-[0.99]" data-cat="pasteles" data-id="p3" data-name="tarta de frutos rojos" data-price="22.00" data-stock="2">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Flaky sweet tart shell brimming with vanilla pastry cream and fresh vibrant raspberries, blackberries, and glossy red currant coulis, professional culinary patisserie lighting, warm delicate atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvMsaSMjsEZYoudiNOhu_EynX1VrcZTs9eJDp_rC7TRo06-qRTVRPJTnk_qO5ztliYhsF2q2hZqnQbODnWlYKoPcjtmpfF3cXuFwfdJNjQHyt4b4ThMlE4dEW7UVNx3xl4e8oo-c59sBEEEM1tYXzMvklsiDmvQn0YPkKHLllG-n5r08-rljpGmihKcMAvwBVYCp0CDnXw4iFjS_K5veB4U7kNgEa2IB2AUSg6Lw"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-tertiary-fixed text-on-tertiary-fixed flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          2 disp.
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-primary uppercase">Pasteles</span>
+<span class="text-[10px] font-label-sm text-tertiary font-bold">¡Últimas unidades!</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Tarta de Frutos Rojos</h2>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">$22.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ tarta</span>
+</div>
+</div>
+<button aria-label="Agregar Tarta Frutos Rojos" class="add-to-cart-btn w-12 h-12 rounded-xl bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center shadow-xs transition-colors flex-shrink-0 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[24px]">add_shopping_cart</span>
+</button>
+</div>
+<!-- Item 4: Galletas Chispas de Chocolate (Pack x6) -->
+<div class="product-item bg-surface-container-lowest rounded-2xl p-space-sm shadow-sm flex items-center justify-between gap-space-sm hover:shadow-md transition-all active:scale-[0.99]" data-cat="galletas" data-id="p4" data-name="galletas chispas de chocolate (pack x6)" data-price="7.50" data-stock="12">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Golden brown freshly baked chocolate chip cookies tied with a neat periwinkle ribbon pack of six, gooey melted dark chocolate chunks and sea salt flakes, artisan bakery tabletop setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Bm9JE4H2d7Zg7Jo2NEvgdgvYF4w7tQDrqetgBQGYVUzgE-zGTwn64DN1xML145Rua9DedI7_NPhhcJffYK8UPlIHto8Oij9KN7X7wSRktl05USNe6XdEUMfmvFqZQ4xWix9wtB1I4MG28NLTKUnWi1kAzhDrw_j3x0w2Ku1bHP_Up72w9l2Ue-N4P4H1jvpGp-Mgs_ep4t4J8N97V39DfzavGYCmICpbnXnfuQ"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-secondary-fixed text-on-secondary-fixed">
+          12 disp.
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Galletas</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Galletas Chispas Chocolate (x6)</h2>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">$7.50</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ pack</span>
+</div>
+</div>
+<button aria-label="Agregar Galletas" class="add-to-cart-btn w-12 h-12 rounded-xl bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center shadow-xs transition-colors flex-shrink-0 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[24px]">add_shopping_cart</span>
+</button>
+</div>
+<!-- Item 5: Macarons Surtidos (Caja 6) -->
+<div class="product-item bg-surface-container-lowest rounded-2xl p-space-sm shadow-sm flex items-center justify-between gap-space-sm hover:shadow-md transition-all active:scale-[0.99]" data-cat="postres" data-id="p5" data-name="macarons surtidos (caja 6)" data-price="12.00" data-stock="8">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Chic pastel gift box filled with six delicate French macarons in pistachio, strawberry, blueberry, and salted butter caramel flavors, romantic French patisserie aesthetic, clean soft light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_cf7qba0DpuPFI8sz1E5KkBjDO6XP4iUdF55DrTjYXLmuY6Pcrfr16qj65RXTxLU68JVDZUT2mn-WmrbNHvgYGvzpbistKb31MSP_F93uaW56Pf9ogYeN0xrZseuEalhWnok667RXMx0MiTtaPEQzBnbVg-VTS2ZJJzf9JTYlJuYa90IE9SSNdzpI4vDzXmY60zpDwkiznEapb0uyFe4F0SXnVQMUCxqCyni63w"/>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-secondary-fixed text-on-secondary-fixed">
+          8 disp.
+        </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase">Postres Fríos</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Macarons Surtidos (Caja 6)</h2>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-headline-md text-headline-md text-on-surface">$12.00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ estuche</span>
+</div>
+</div>
+<button aria-label="Agregar Macarons" class="add-to-cart-btn w-12 h-12 rounded-xl bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center shadow-xs transition-colors flex-shrink-0 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[24px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Estado Vacío para Búsquedas sin Coincidencia -->
+<div class="hidden flex-col items-center justify-center py-12 px-4 text-center" id="emptySearchNotice">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-outline mb-3">
+<span class="material-symbols-outlined text-[32px]">cake</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">¡Receta no encontrada!</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">No tenemos ese postre en la vitrina actual. Prueba con otro nombre o revisa la categoría.</p>
+</div>
+<!-- Barra Flotante Inferior de Carrito / Ticket Actual -->
+<div class="sticky bottom-16 z-30 -mx-margin px-margin pt-2 pb-1">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl p-space-sm shadow-xl flex items-center justify-between gap-space-sm backdrop-blur-md">
+<!-- Detalle Ticket -->
+<div class="flex items-center gap-space-xs min-w-0 cursor-pointer" id="cartSummaryDrawerTrigger">
+<div class="relative w-11 h-11 rounded-xl bg-surface-container-highest/20 flex items-center justify-center text-primary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-tertiary text-on-tertiary text-[11px] font-bold flex items-center justify-center shadow-xs" id="cartCountBadge">3</span>
+</div>
+<div class="min-w-0 flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-surface-container-high truncate" id="cartItemSummary">3 artículos</span>
+<span class="w-1 h-1 rounded-full bg-surface-variant"></span>
+<span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-surface-container-highest/30 text-surface-bright uppercase" id="docTypeBadge">Ticket</span>
+</div>
+<span class="font-data-metric text-headline-md font-bold text-inverse-on-surface leading-tight" id="cartTotalSum">$38.50</span>
+</div>
+</div>
+<!-- Botón Destacado de Acción -->
+<button class="flex-shrink-0 bg-tertiary hover:bg-tertiary-container text-on-tertiary font-label-lg text-label-lg px-space-md py-3 rounded-xl shadow-md active:scale-95 transition-all flex items-center gap-2" id="checkoutBtn" type="button">
+<span>Cobrar</span>
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</button>
+</div>
+</div>
+<!-- Mini Toast Notificación de Agregado -->
+<div class="fixed bottom-36 left-1/2 -translate-x-1/2 bg-on-surface/90 text-surface px-4 py-2 rounded-full text-label-md font-label-md flex items-center gap-2 shadow-lg opacity-0 pointer-events-none transition-all z-40" id="cartToast">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]">check_circle</span>
+<span id="toastMsg">Producto añadido al ticket</span>
+</div>
+</div>
+<script>
+  (function() {
+    // Carrito de compras reactivo en memoria
+    let currentCart = [
+      { id: 'p1', name: 'Pastel Red Velvet (8 porc.)', price: 28.00, qty: 1 },
+      { id: 'p2', name: 'Cupcake de Vainilla & Cereza', price: 3.50, qty: 1 },
+      { id: 'p4', name: 'Galletas Chispas Chocolate (x6)', price: 7.50, qty: 1 }
+    ];
+    let discountPercent = 0;
+    let tipAmount = 0.00;
+    let documentType = 'ticket';
+
+    // Elementos DOM
+    const searchInput = document.getElementById('posSearch');
+    const clearSearch = document.getElementById('clearSearch');
+    const productItems = document.querySelectorAll('.product-item');
+    const emptyNotice = document.getElementById('emptySearchNotice');
+    const catPills = document.querySelectorAll('.cat-pill');
+    const cartCountBadge = document.getElementById('cartCountBadge');
+    const cartItemSummary = document.getElementById('cartItemSummary');
+    const cartTotalSum = document.getElementById('cartTotalSum');
+    const docTypeBadge = document.getElementById('docTypeBadge');
+    const docTypeIcon = document.getElementById('docTypeIcon');
+    const billingSegmentBtns = document.querySelectorAll('#billingSegment button');
+    const customerPanel = document.getElementById('customerDetailsPanel');
+    const quickDiscountBtn = document.getElementById('quickDiscountBtn');
+    const discountLabel = document.getElementById('discountLabel');
+    const quickTipBtn = document.getElementById('quickTipBtn');
+    const tipLabel = document.getElementById('tipLabel');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const toast = document.getElementById('cartToast');
+    const toastMsg = document.getElementById('toastMsg');
+    const orderTypeToggle = document.getElementById('orderTypeToggle');
+
+    function updateCartDisplay() {
+      const totalItems = currentCart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = currentCart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const discounted = subtotal * (1 - (discountPercent / 100));
+      const grandTotal = Math.max(0, discounted + tipAmount);
+
+      cartCountBadge.textContent = totalItems;
+      cartItemSummary.textContent = `${totalItems} artículo${totalItems === 1 ? '' : 's'}`;
+      cartTotalSum.textContent = `$${grandTotal.toFixed(2)}`;
+    }
+
+    function showToast(text) {
+      if (!toast) return;
+      toastMsg.textContent = text;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100', '-translate-y-2');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', '-translate-y-2');
+        toast.classList.add('opacity-0');
+      }, 1600);
+    }
+
+    // Filtrado de Productos por búsqueda y categoría
+    function filterProducts() {
+      const query = (searchInput.value || '').toLowerCase().trim();
+      const activeCatBtn = document.querySelector('.cat-pill.bg-primary');
+      const activeCat = activeCatBtn ? activeCatBtn.dataset.cat : 'all';
+
+      let visibleCount = 0;
+      productItems.forEach(item => {
+        const name = item.dataset.name.toLowerCase();
+        const cat = item.dataset.cat;
+        const matchesQuery = name.includes(query);
+        const matchesCat = activeCat === 'all' || cat === activeCat;
+
+        if (matchesQuery && matchesCat) {
+          item.classList.remove('hidden');
+          item.classList.add('flex');
+          visibleCount++;
+        } else {
+          item.classList.remove('flex');
+          item.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        emptyNotice.classList.remove('hidden');
+        emptyNotice.classList.add('flex');
+      } else {
+        emptyNotice.classList.add('hidden');
+        emptyNotice.classList.remove('flex');
+      }
+
+      if (query.length > 0) {
+        clearSearch.classList.remove('hidden');
+      } else {
+        clearSearch.classList.add('hidden');
+      }
+    }
+
+    searchInput.addEventListener('input', filterProducts);
+    clearSearch.addEventListener('click', () => {
+      searchInput.value = '';
+      filterProducts();
+      searchInput.focus();
+    });
+
+    // Filtros de Categoría
+    catPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        catPills.forEach(p => {
+          p.classList.remove('bg-primary', 'text-on-primary');
+          p.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        pill.classList.add('bg-primary', 'text-on-primary');
+        filterProducts();
+      });
+    });
+
+    // Agregar al carrito
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = btn.closest('.product-item');
+        const id = card.dataset.id;
+        const name = card.querySelector('h2').innerText;
+        const price = parseFloat(card.dataset.price);
+
+        const existing = currentCart.find(i => i.id === id);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          currentCart.push({ id, name, price, qty: 1 });
+        }
+
+        // Animación de pulso táctil
+        btn.classList.add('bg-primary', 'text-on-primary');
+        setTimeout(() => {
+          btn.classList.remove('bg-primary', 'text-on-primary');
+        }, 200);
+
+        updateCartDisplay();
+        showToast(`+1 ${name}`);
+      });
+    });
+
+    // Cambio de tipo de comprobante (Ticket / Factura)
+    function setDocType(type) {
+      documentType = type;
+      billingSegmentBtns.forEach(btn => {
+        if (btn.dataset.type === type) {
+          btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          btn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+
+      if (type === 'factura') {
+        customerPanel.classList.remove('hidden');
+        docTypeBadge.textContent = 'Factura';
+        docTypeIcon.textContent = 'description';
+      } else {
+        customerPanel.classList.add('hidden');
+        docTypeBadge.textContent = 'Ticket';
+        docTypeIcon.textContent = 'receipt_long';
+      }
+    }
+
+    billingSegmentBtns.forEach(btn => {
+      btn.addEventListener('click', () => setDocType(btn.dataset.type));
+    });
+
+    orderTypeToggle.addEventListener('click', () => {
+      setDocType(documentType === 'ticket' ? 'factura' : 'ticket');
+    });
+
+    // Descuento rápido interactivo
+    quickDiscountBtn.addEventListener('click', () => {
+      const options = [0, 5, 10, 15];
+      const nextIndex = (options.indexOf(discountPercent) + 1) % options.length;
+      discountPercent = options[nextIndex];
+      discountLabel.textContent = `Descuento (${discountPercent}%)`;
+      if (discountPercent > 0) {
+        quickDiscountBtn.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+      } else {
+        quickDiscountBtn.classList.remove('bg-primary-fixed', 'text-on-primary-fixed');
+      }
+      updateCartDisplay();
+      showToast(`Descuento: ${discountPercent}% aplicado`);
+    });
+
+    // Propina rápida interactiva
+    quickTipBtn.addEventListener('click', () => {
+      const tipSteps = [0.00, 1.00, 2.50, 5.00];
+      const nextIndex = (tipSteps.indexOf(tipAmount) + 1) % tipSteps.length;
+      tipAmount = tipSteps[nextIndex];
+      tipLabel.textContent = `Propina ($${tipAmount.toFixed(2)})`;
+      if (tipAmount > 0) {
+        quickTipBtn.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed');
+      } else {
+        quickTipBtn.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed');
+      }
+      updateCartDisplay();
+      showToast(`Propina: $${tipAmount.toFixed(2)} agregada`);
+    });
+
+    // Simulación Lector de Código de Barras
+    const barcodeBtn = document.getElementById('barcodeBtn');
+    barcodeBtn.addEventListener('click', () => {
+      barcodeBtn.classList.add('bg-primary', 'text-on-primary');
+      showToast("Buscando código de barra...");
+      setTimeout(() => {
+        barcodeBtn.classList.remove('bg-primary', 'text-on-primary');
+        // Agrega cupcake por barcode simulado
+        const cupcake = currentCart.find(i => i.id === 'p2');
+        if (cupcake) cupcake.qty += 1;
+        updateCartDisplay();
+        showToast("Escaneado: Cupcake Vainilla & Cereza");
+      }, 700);
+    });
+
+    // Acción de cobro final
+    checkoutBtn.addEventListener('click', () => {
+      if (currentCart.length === 0) {
+        showToast("El carrito está vacío");
+        return;
+      }
+      const total = cartTotalSum.textContent;
+      showToast(`Procesando cobro ${total} (${documentType.toUpperCase()})...`);
+    });
+
+    // Inicializar cálculos
+    updateCartDisplay();
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(52,90,160,0.06)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inicio-finanzas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">dashboard</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Finanzas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="ventas-facturas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">point_of_sale</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Ventas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="recetario-costos" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">menu_book</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Recetas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inventario" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">inventory_2</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Stock</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="asistente-ia" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">auto_awesome</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Chef IA</span></a></div></nav></body></html>

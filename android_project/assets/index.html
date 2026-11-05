@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="h-full" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <meta content="mobile_tab" name="shell-type"/>
+  <title>Sweet Smile - Pastry & Bakery Manager</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed-dim": "#aec6ff",
+            "on-primary-container": "#fefcff",
+            "on-error": "#ffffff",
+            "tertiary-container": "#db313f",
+            "surface-bright": "#f9f9ff",
+            "secondary-container": "#afcafe",
+            "surface-variant": "#dde2f5",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#edf0ff",
+            "primary": "#345aa0",
+            "on-background": "#151b29",
+            "on-primary-fixed-variant": "#1a4589",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffdad8",
+            "secondary": "#445f8c",
+            "inverse-primary": "#aec6ff",
+            "on-tertiary-container": "#fffbff",
+            "surface-dim": "#d4daec",
+            "on-error-container": "#93000a",
+            "surface-tint": "#375da3",
+            "outline-variant": "#c3c6d2",
+            "on-primary-fixed": "#001a42",
+            "tertiary-fixed-dim": "#ffb3b1",
+            "secondary-fixed-dim": "#acc7fb",
+            "on-surface": "#151b29",
+            "primary-fixed": "#d8e2ff",
+            "on-secondary-fixed": "#001b3e",
+            "on-tertiary-fixed-variant": "#92001c",
+            "inverse-surface": "#2a303f",
+            "on-secondary-fixed-variant": "#2b4773",
+            "surface-container-low": "#f1f3ff",
+            "outline": "#747782",
+            "surface": "#f9f9ff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#dde2f5",
+            "on-secondary-container": "#395581",
+            "surface-container": "#e9edff",
+            "on-tertiary-fixed": "#410007",
+            "secondary-fixed": "#d6e3ff",
+            "primary-container": "#4f73bb",
+            "background": "#f9f9ff",
+            "surface-container-high": "#e2e8fb",
+            "on-surface-variant": "#434751",
+            "tertiary": "#b7102a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-2xs": "0.25rem",
+            "space-sm": "0.75rem",
+            "margin-desktop": "2.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.5rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "space-xl": "2rem",
+            "gutter-desktop": "1.75rem",
+            "space-2xl": "3rem"
+          },
+          fontFamily: {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "data-metric": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "data-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-fixed">
+  
+  <div id="app-container" class="w-full flex-1 flex flex-col relative">
+    <!-- Header (Stitch Design Specification) -->
+    <header class="fixed top-0 left-0 right-0 z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] border-b border-surface-variant/30">
+      <div class="max-w-[600px] mx-auto h-16 px-margin flex items-center justify-between gap-space-xs">
+        <div class="flex items-center gap-space-xs min-w-0">
+          <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 shadow-[0_2px_8px_rgba(52,90,160,0.08)]">
+            <span class="material-symbols-outlined text-[22px]">bakery_dining</span>
+          </div>
+          <div class="min-w-0 flex flex-col">
+            <div class="flex items-center gap-1 cursor-pointer">
+              <span class="font-label-sm text-primary tracking-wider uppercase truncate">Sweet Smile Pastry</span>
+              <span class="material-symbols-outlined text-[16px] text-primary flex-shrink-0">expand_more</span>
+            </div>
+            <h1 class="font-headline-sm text-headline-sm text-on-surface truncate font-bold" id="headerPageTitle">Inicio / Finanzas</h1>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <!-- Cloud Sync Pill -->
+          <div id="cloudSyncPill" class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-[11px] font-semibold cursor-pointer" title="Estado de Sincronización en la Nube">
+            <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+            <span>Sincronizado</span>
+          </div>
+
+          <!-- Notification Bell -->
+          <button aria-label="Alertas y Notificaciones" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors relative" id="headerNotificationsBtn" type="button">
+            <span class="material-symbols-outlined text-[22px]">notifications</span>
+            <span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary"></span>
+          </button>
+
+          <!-- Baker Profile -->
+          <div class="flex items-center p-0.5 rounded-full bg-surface-container-high">
+            <img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Vr255DdZtDDpn27qlUs8yMsiPTGQklYKkIxGFs5rCT1lh2y0wOIHOLuxasrcUBXguUmKRDJZphMCuPz4JEWSI9aKkqwPLecz3bQvXJ8hPlyPGLRvmTC2DN0dFfKSZX9j1apKGuuP7t1722k8EsNTwxm9r4v7_WzmyxJHUr-xAzBdkDBeaIjaQ0Zy_HOvdCrc3zHyRnTXfzuULx9ZNNgb_03db3q6EIQ-GL2Wbk-ScRNwdamQGZB3Bd"/>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Dynamic Screen Content -->
+    <main class="flex-1 w-full bg-surface pt-20 pb-20 min-h-screen" id="app-main-content">
+      <!-- Injected by router -->
+    </main>
+
+    <!-- Bottom Navigation Bar (Stitch Design Specification) -->
+    <nav class="fixed bottom-0 left-0 right-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(52,90,160,0.06)] border-t border-surface-variant/30" id="bottomNav">
+      <div class="max-w-[600px] mx-auto h-16 px-1 flex items-center justify-around">
+        <a class="nav-link flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors active" data-route="dashboard" href="#dashboard">
+          <div class="w-8 h-7 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[20px]">dashboard</span>
+          </div>
+          <span class="font-label-sm text-[10px] leading-tight mt-0.5 font-semibold">Finanzas</span>
+        </a>
+
+        <a class="nav-link flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-route="pos" href="#pos">
+          <div class="w-8 h-7 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[20px]">point_of_sale</span>
+          </div>
+          <span class="font-label-sm text-[10px] leading-tight mt-0.5 font-semibold">Ventas</span>
+        </a>
+
+        <a class="nav-link flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-route="recetario" href="#recetario">
+          <div class="w-8 h-7 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[20px]">menu_book</span>
+          </div>
+          <span class="font-label-sm text-[10px] leading-tight mt-0.5 font-semibold">Recetas</span>
+        </a>
+
+        <a class="nav-link flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-route="inventario" href="#inventario">
+          <div class="w-8 h-7 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[20px]">inventory_2</span>
+          </div>
+          <span class="font-label-sm text-[10px] leading-tight mt-0.5 font-semibold">Stock</span>
+        </a>
+
+        <a class="nav-link flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-route="asistente" href="#asistente">
+          <div class="w-8 h-7 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+          </div>
+          <span class="font-label-sm text-[10px] leading-tight mt-0.5 font-semibold">Chef IA</span>
+        </a>
+
+        <a class="nav-link flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors" data-route="catalogo" href="#catalogo">
+          <div class="w-8 h-7 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-[20px]">storefront</span>
+          </div>
+          <span class="font-label-sm text-[10px] leading-tight mt-0.5 font-semibold">Catálogo QR</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Modal Notificaciones, Alarmas de Horno & Vencimientos -->
+  <div id="notificationsModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-surface-container-lowest w-full max-w-md rounded-3xl p-5 flex flex-col gap-4 shadow-2xl">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[24px]">alarm</span>
+          <h3 class="font-headline-sm font-bold text-on-surface">Temporizadores & Alertas</h3>
+        </div>
+        <button id="closeNotificationsModal" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <h4 class="font-bold text-xs uppercase tracking-wider text-on-surface-variant">Temporizadores en Horno</h4>
+          <button class="px-2.5 py-1 rounded-full bg-primary text-on-primary text-xs font-bold" id="btnNewTimer">
+            + Nuevo Horno
+          </button>
+        </div>
+        <div id="activeTimersList" class="flex flex-col gap-2"></div>
+      </div>
+
+      <div class="border-t border-surface-variant/40 pt-3 flex flex-col gap-2">
+        <h4 class="font-bold text-xs uppercase tracking-wider text-on-surface-variant">Alertas de Vencimiento</h4>
+        <div class="p-3 bg-tertiary-fixed/60 rounded-xl flex items-center gap-2.5">
+          <span class="material-symbols-outlined text-tertiary text-[20px]">warning</span>
+          <div class="text-xs">
+            <strong class="text-on-tertiary-fixed">Fresas Frescas:</strong> Vencen en 3 días. Hornear Pavlovas o Coulis.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Sincronización en la Nube & Multi-Dispositivo -->
+  <div id="syncModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-surface-container-lowest w-full max-w-md rounded-3xl p-5 flex flex-col gap-4 shadow-2xl">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[24px]">cloud_sync</span>
+          <h3 class="font-headline-sm font-bold text-on-surface">Sincronización en la Nube</h3>
+        </div>
+        <button id="closeSyncModal" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <p class="text-xs text-on-surface-variant leading-relaxed">
+        Accede a tus recetas, ventas e inventario desde tu teléfono, tablet y ordenador de cocina de forma simultánea. El modo offline guarda todo localmente de forma automática.
+      </p>
+
+      <!-- Live Sync Status Card -->
+      <div class="p-3.5 bg-surface-container-low rounded-2xl border border-surface-variant/30 flex flex-col gap-2.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span id="syncModalStatusDot" class="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
+            <span class="text-xs font-bold text-on-surface">Estado:</span>
+            <span id="syncModalStatusText" class="text-xs font-extrabold text-primary">Sincronizado</span>
+          </div>
+          <span id="syncModalPendingBadge" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">0 pendientes</span>
+        </div>
+        <div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-1 border-t border-surface-variant/20">
+          <span>Última sincronización:</span>
+          <span id="syncModalLastSync" class="font-mono font-medium">Reciente</span>
+        </div>
+      </div>
+
+      <!-- Google Drive / Cloud Connection Card -->
+      <div class="p-3.5 bg-surface-container-low rounded-2xl border border-surface-variant/30 flex flex-col gap-2">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px] text-primary">add_to_drive</span>
+            <span class="text-xs font-bold text-on-surface">Google Drive & Cloud</span>
+          </div>
+          <span id="syncModalGoogleBadge" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Sin configurar</span>
+        </div>
+        <p class="text-[11px] text-on-surface-variant leading-snug">
+          Conecta tu cuenta de Google para sincronizar tus datos con Google Drive AppData o tu endpoint en Google Cloud.
+        </p>
+        <button class="w-full py-2 rounded-xl bg-surface-container-high text-primary font-bold text-xs hover:bg-surface-variant/60 flex items-center justify-center gap-1.5 transition-colors" id="btnConnectGoogle">
+          <span class="material-symbols-outlined text-[16px]">key</span>
+          <span id="btnConnectGoogleText">Conectar con Google Cloud / Drive</span>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <button class="w-full py-2.5 rounded-xl bg-primary text-on-primary font-bold text-sm shadow-sm flex items-center justify-center gap-2" id="btnForceSync">
+          <span class="material-symbols-outlined text-[18px]">sync</span>
+          <span id="btnForceSyncText">Sincronizar Ahora</span>
+        </button>
+        <button class="w-full py-2.5 rounded-xl bg-surface-container text-on-surface font-bold text-sm hover:bg-surface-container-high flex items-center justify-center gap-2" id="btnExportBackup">
+          <span class="material-symbols-outlined text-[18px]">download</span>
+          <span>Exportar Copia de Seguridad (JSON)</span>
+        </button>
+        <button class="w-full py-2.5 rounded-xl bg-surface-container text-on-surface font-bold text-sm hover:bg-surface-container-high flex items-center justify-center gap-2" id="btnImportBackupTrigger">
+          <span class="material-symbols-outlined text-[18px]">upload_file</span>
+          <span>Restaurar Copia en otro Dispositivo</span>
+        </button>
+        <input type="file" id="importBackupFile" accept=".json" class="hidden" />
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="h-full" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <title>Sweet Smile Pastry - Catálogo de Repostería Fina</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#345aa0",
+            "primary-container": "#4f73bb",
+            "secondary": "#445f8c",
+            "secondary-container": "#afcafe",
+            "secondary-fixed": "#d6e3ff",
+            "tertiary": "#b7102a",
+            "surface": "#f9f9ff",
+            "surface-container": "#e9edff",
+            "surface-container-low": "#f1f3ff",
+            "surface-container-high": "#e2e8fb",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#151b29",
+            "on-surface-variant": "#434751",
+            "outline": "#747782"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans text-on-surface antialiased min-h-screen flex flex-col pb-24">
+  <!-- Header -->
+  <header class="sticky top-0 w-full z-40 bg-surface/90 backdrop-blur-xl border-b border-surface-container shadow-xs">
+    <div class="max-w-xl mx-auto h-16 px-4 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shadow-xs">
+          <span class="material-symbols-outlined text-[24px]">bakery_dining</span>
+        </div>
+        <div>
+          <h1 class="font-bold text-lg leading-tight text-primary">Sweet Smile Pastry</h1>
+          <p class="text-xs text-on-surface-variant font-medium">Repostería Artesanal & Pedidos WhatsApp</p>
+        </div>
+      </div>
+      <button id="openCartBtn" class="relative w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-primary shadow-xs hover:bg-surface-container-high transition-colors">
+        <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+        <span id="cartCountBadge" class="hidden absolute -top-1 -right-1 w-5 h-5 rounded-full bg-tertiary text-white text-[11px] font-bold flex items-center justify-center">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-xl mx-auto w-full px-4 pt-4 flex flex-col gap-4">
+    <!-- Hero Banner -->
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-primary-container text-white p-5 shadow-sm">
+      <div class="relative z-10 flex flex-col gap-1">
+        <span class="text-xs uppercase tracking-wider text-secondary-fixed font-bold">Carta Dulce & Obrador</span>
+        <h2 class="text-2xl font-extrabold leading-tight">Hecho con amor, listo para compartir</h2>
+        <p class="text-xs text-blue-100 mt-1">Elige tus postres favoritos y envíanos tu pedido directo por WhatsApp con entrega a domicilio o retiro.</p>
+      </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="flex items-center gap-2 overflow-x-auto pb-1 -mx-4 px-4 no-scrollbar" id="catalogCategoryFilters">
+      <button class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-primary text-white shadow-sm flex-shrink-0" data-cat="all">Todos</button>
+      <button class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface-variant flex-shrink-0" data-cat="pasteles">Pasteles</button>
+      <button class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface-variant flex-shrink-0" data-cat="cupcakes">Cupcakes</button>
+      <button class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface-variant flex-shrink-0" data-cat="galletas">Galletas</button>
+      <button class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface-variant flex-shrink-0" data-cat="postres">Postres Fríos</button>
+      <button class="cat-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface-variant flex-shrink-0" data-cat="bebidas">Bebidas</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="flex flex-col gap-3" id="catalogProductList">
+      <!-- Injected by JavaScript -->
+    </div>
+  </main>
+
+  <!-- Sticky Bottom Cart Button -->
+  <div id="stickyCartBar" class="fixed bottom-3 left-4 right-4 max-w-xl mx-auto hidden z-40">
+    <button id="viewCartBottomBtn" class="w-full py-3.5 px-5 bg-primary text-white rounded-2xl shadow-xl flex items-center justify-between font-bold hover:opacity-95 active:scale-98 transition-all">
+      <div class="flex items-center gap-2">
+        <span class="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center text-xs" id="bottomCartCount">1</span>
+        <span>Ver Pedido</span>
+      </div>
+      <span class="text-lg" id="bottomCartTotal">$0.00</span>
+    </button>
+  </div>
+
+  <!-- Cart & WhatsApp Checkout Drawer / Modal -->
+  <div id="catalogCartModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-surface-container-lowest w-full max-w-lg rounded-t-3xl sm:rounded-3xl max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="p-4 border-b border-surface-container flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[24px]">shopping_bag</span>
+          <h3 class="font-bold text-lg text-on-surface">Tu Pedido Dulce</h3>
+        </div>
+        <button id="closeCartModal" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="p-4 overflow-y-auto flex-1 flex flex-col gap-3" id="cartModalBody">
+        <div id="cartItemsList" class="flex flex-col gap-2"></div>
+
+        <div class="p-3 bg-surface-container rounded-xl flex justify-between items-center font-bold text-lg mt-2">
+          <span>Total:</span>
+          <span id="modalTotal" class="text-primary">$0.00</span>
+        </div>
+
+        <!-- Customer Inputs for WhatsApp Order -->
+        <div class="flex flex-col gap-2.5 mt-2">
+          <h4 class="text-xs uppercase tracking-wider font-bold text-on-surface-variant">Tus Datos para el Envío</h4>
+          <input type="text" id="custName" class="w-full bg-surface-container-low px-3.5 py-2.5 rounded-xl text-sm outline-none" placeholder="Tu Nombre Completo" required />
+          <div class="grid grid-cols-2 gap-2">
+            <input type="text" id="custDate" class="w-full bg-surface-container-low px-3 py-2 rounded-xl text-sm outline-none" placeholder="Fecha y Hora de Entrega" />
+            <select id="custDeliveryType" class="w-full bg-surface-container-low px-3 py-2 rounded-xl text-sm outline-none">
+              <option value="A Domicilio">A Domicilio</option>
+              <option value="Retiro en Tienda">Retiro en Tienda</option>
+            </select>
+          </div>
+          <input type="text" id="custAddress" class="w-full bg-surface-container-low px-3.5 py-2.5 rounded-xl text-sm outline-none" placeholder="Dirección de entrega (si aplica)" />
+          <textarea id="custNotes" rows="2" class="w-full bg-surface-container-low px-3.5 py-2 rounded-xl text-sm outline-none" placeholder="Dedicatoria, alérgenos o mensaje para el pastel..."></textarea>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-surface-container bg-surface-container-low">
+        <button id="sendWhatsappBtn" class="w-full py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-base shadow-md flex items-center justify-center gap-2 hover:bg-[#20bd5a] active:scale-98 transition-all">
+          <span class="material-symbols-outlined text-[22px]">chat</span>
+          <span>Pedir por WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Standalone Seed Menu
+    const DEFAULT_PRODUCTS = [
+      {
+        id: "p1",
+        name: "Pastel Red Velvet (8 porc.)",
+        category: "pasteles",
+        price: 28.00,
+        unit: "unidad",
+        description: "Bizcocho aterciopelado con crema suave de queso mascarpone y migas rubí.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAEjgP9WLGhKmmRngYIvpMy5bizc9gvxS7KvmL8ZSYsRyFgm1Wb--rtADIk1OAqLC5weD7EMfY0jpdq-yi4fn2vHxTl_en-_GA-s67Pmn-xiaYdHK61dPk8ubiOmydhDL4aqHLOziZqjInpsY8xQsKlvRuC0mi9Aj30W_M6ErqflejfA26jxBQao_NqIPO7JRvIqq-ZoI3fdM15aalvDb9n6ObkQy_iJYLsA9_cQQ"
+      },
+      {
+        id: "p2",
+        name: "Cupcake de Vainilla & Cereza",
+        category: "cupcakes",
+        price: 3.50,
+        unit: "porción",
+        description: "Bizcocho de vainilla bourbon con buttercream artesanal y cereza confitada.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAuYmob8U8YDFdUIx43cCnc76Fzoi4rOPEXrj_ChPPuLnyYnhQMzc8bEtOs71D-wfq56__PYppUUO573t6oJhWmqMqHO-xv5jSi94MKpqK1UDVZLBErkxWsZLl4JdChxUP9HiCRFAxYnSxryy_WbBNq9oMiLHX28vnTxehDgWVJcd6osJHtJ-phsanzMJUfW9vtnMSnBHO0ZWUbl5F4sK1FW8QC7PkVQpsaQVM-gg"
+      },
+      {
+        id: "p3",
+        name: "Tarta de Frutos Rojos",
+        category: "pasteles",
+        price: 22.00,
+        unit: "tarta",
+        description: "Masa quebrada crujiente con crema pastelera aromatizada y berries frescos.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAvMsaSMjsEZYoudiNOhu_EynX1VrcZTs9eJDp_rC7TRo06-qRTVRPJTnk_qO5ztliYhsF2q2hZqnQbODnWlYKoPcjtmpfF3cXuFwfdJNjQHyt4b4ThMlE4dEW7UVNx3xl4e8oo-c59sBEEEM1tYXzMvklsiDmvQn0YPkKHLllG-n5r08-rljpGmihKcMAvwBVYCp0CDnXw4iFjS_K5veB4U7kNgEa2IB2AUSg6Lw"
+      },
+      {
+        id: "p4",
+        name: "Galletas Chispas Chocolate (x6)",
+        category: "galletas",
+        price: 7.50,
+        unit: "pack",
+        description: "Galletas doradas con trozos de chocolate amargo 70% y escamas de sal marina.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA-Bm9JE4H2d7Zg7Jo2NEvgdgvYF4w7tQDrqetgBQGYVUzgE-zGTwn64DN1xML145Rua9DedI7_NPhhcJffYK8UPlIHto8Oij9KN7X7wSRktl05USNe6XdEUMfmvFqZQ4xWix9wtB1I4MG28NLTKUnWi1kAzhDrw_j3x0w2Ku1bHP_Up72w9l2Ue-N4P4H1jvpGp-Mgs_ep4t4J8N97V39DfzavGYCmICpbnXnfuQ"
+      },
+      {
+        id: "p5",
+        name: "Macarons Surtidos (Caja 6)",
+        category: "postres",
+        price: 14.00,
+        unit: "caja",
+        description: "Delicados macarons franceses de pistacho, frambuesa, caramelo y mora.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB_cf7qba0DpuPFI8sz1E5KkBjDO6XP4iUdF55DrTjYXLmuY6Pcrfr16qj65RXTxLU68JVDZUT2mn-WmrbNHvgYGvzpbistKb31MSP_F93uaW56Pf9ogYeN0xrZseuEalhWnok667RXMx0MiTtaPEQzBnbVg-VTS2ZJJzf9JTYlJuYa90IE9SSNdzpI4vDzXmY60zpDwkiznEapb0uyFe4F0SXnVQMUCxqCyni63w"
+      },
+      {
+        id: "p6",
+        name: "Pastel Selva Negra Especial 20cm",
+        category: "pasteles",
+        price: 34.75,
+        unit: "unidad",
+        description: "Bizcochuelo de chocolate amargo embebido en licor de cerezas con virutas.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCUGUg7P1C8LywkVtJqLkY4D53zo4tyqUmnYtj_JEKHBXSQekjkhTphOh6O5krRL-kggUEmVtQpV5VAcJo-uhyGaHVaSkGFQmO88hOeySu-Lh67MNxdFHCT75hrbeY62OdASz7Ur-oMQGjNBfLa_BdtDuLJX48i78-dVjXW6Ou3GZ538o51lALo-LkBQ3e_oHxldp3tfiQgF8qu4XHz9NXMmvxLHqgoZcwI36eenA"
+      },
+      {
+        id: "p7",
+        name: "Cheesecake Vasco de Fresa",
+        category: "pasteles",
+        price: 28.00,
+        unit: "unidad",
+        description: "Cheesecake tostado estilo Donostia con coulis de fresas silvestres.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBg9SAdmLp8guizBKJd4Zwlr24RKxGScAotsml_LSxSZBobd6Nn90gIiHkMUj0AmiXkjqhxk5cPB5fV5BtDjLnXCLRceh0lO5JPqvxd5s86YV2263l5z7Ni_uXOxLgT7yPXakp-G4Yx1IcQH8JLuGP69Y_Oa-wvEtHMtItmgcBYAhBUq3WBQ5c0PJfud9AWVdz-JY-4c3mfHyRIEX8PsId95EUA8IVraZQ5HG6Gfg"
+      },
+      {
+        id: "p8",
+        name: "Croissant Francés de Mantequilla",
+        category: "postres",
+        price: 3.80,
+        unit: "porción",
+        description: "Croissant hojaldrado con 100% mantequilla europea de 82% materia grasa.",
+        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC5SaRNBTOP1mUc2qrzbxq670soQBiefsSyD-hsk34UiMk_o9gm0yu64W2BXRPc7W6WVq5eSE9QcsuSZF7Wbh4V04Q63ZXtvPXVI5unVMw2-r4T1ZpsPwUL0btcC_DuJBdoyHV31YJ0Ut-j_CQO7yl3lNPiHci9_c-TDKX6SEtotyL633bQ6-XxYmlixxg0irbegGW5C-TZn5PHU3gafOMrgneEhO5d0fLFTdzNGw"
+      }
+    ];
+
+    // Load products from localStorage if available
+    let products = DEFAULT_PRODUCTS;
+    let whatsappPhone = "+18095551234";
+
+    try {
+      const stored = localStorage.getItem("sweet_smile_app_state_v1");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (parsed.products && parsed.products.length > 0) products = parsed.products;
+        if (parsed.settings && parsed.settings.whatsappNumber) whatsappPhone = parsed.settings.whatsappNumber;
+      }
+    } catch(e) {}
+
+    let clientCart = [];
+    let selectedCat = "all";
+
+    function renderCatalog() {
+      const listEl = document.getElementById("catalogProductList");
+      const filtered = selectedCat === "all" ? products : products.filter(p => p.category === selectedCat);
+
+      listEl.innerHTML = filtered.map(p => `
+        <div class="bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm border border-surface-container flex gap-3 items-center">
+          <div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+            <img src="${p.image || ''}" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] uppercase font-bold text-primary">${p.category}</span>
+            </div>
+            <h3 class="font-bold text-base text-on-surface truncate">${p.name}</h3>
+            <p class="text-xs text-on-surface-variant line-clamp-1 mt-0.5">${p.description || ''}</p>
+            <div class="flex items-baseline justify-between mt-2">
+              <span class="text-base font-extrabold text-primary">$${Number(p.price).toFixed(2)}</span>
+              <button class="add-to-cart-btn px-3 py-1 rounded-xl bg-surface-container text-primary font-bold text-xs hover:bg-primary hover:text-white transition-colors flex items-center gap-1" data-id="${p.id}">
+                <span class="material-symbols-outlined text-[16px]">add</span>
+                <span>Agregar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-id");
+          const prod = products.find(p => p.id === id);
+          if (prod) {
+            const ex = clientCart.find(i => i.id === id);
+            if (ex) ex.quantity++;
+            else clientCart.push({ ...prod, quantity: 1 });
+            updateCartUI();
+          }
+        });
+      });
+    }
+
+    function updateCartUI() {
+      const count = clientCart.reduce((s, i) => s + i.quantity, 0);
+      const total = clientCart.reduce((s, i) => s + (i.price * i.quantity), 0);
+
+      const badge = document.getElementById("cartCountBadge");
+      const bottomBar = document.getElementById("stickyCartBar");
+      const bottomCount = document.getElementById("bottomCartCount");
+      const bottomTotal = document.getElementById("bottomCartTotal");
+      const modalTotal = document.getElementById("modalTotal");
+
+      if (count > 0) {
+        badge.classList.remove("hidden");
+        badge.innerText = count;
+        bottomBar.classList.remove("hidden");
+        bottomCount.innerText = count;
+        bottomTotal.innerText = `$${total.toFixed(2)}`;
+        modalTotal.innerText = `$${total.toFixed(2)}`;
+      } else {
+        badge.classList.add("hidden");
+        bottomBar.classList.add("hidden");
+        document.getElementById("catalogCartModal").classList.add("hidden");
+      }
+
+      // Render items inside modal
+      const modalItems = document.getElementById("cartItemsList");
+      modalItems.innerHTML = clientCart.map(item => `
+        <div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low text-sm">
+          <div class="min-w-0 flex-1 pr-2">
+            <div class="font-bold truncate">${item.name}</div>
+            <div class="text-xs text-on-surface-variant">$${item.price.toFixed(2)} c/u</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="w-6 h-6 rounded-md bg-surface-container text-xs font-bold" onclick="changeQty('${item.id}', -1)">-</button>
+            <span class="font-bold">${item.quantity}</span>
+            <button class="w-6 h-6 rounded-md bg-surface-container text-xs font-bold" onclick="changeQty('${item.id}', 1)">+</button>
+            <span class="font-bold w-14 text-right">$${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    window.changeQty = function(id, delta) {
+      const item = clientCart.find(i => i.id === id);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity <= 0) {
+          clientCart = clientCart.filter(i => i.id !== id);
+        }
+        updateCartUI();
+      }
+    };
+
+    // Category Buttons
+    document.querySelectorAll(".cat-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".cat-btn").forEach(b => {
+          b.className = "cat-btn px-4 py-2 rounded-full text-xs font-bold bg-surface-container text-on-surface-variant flex-shrink-0";
+        });
+        btn.className = "cat-btn px-4 py-2 rounded-full text-xs font-bold bg-primary text-white shadow-sm flex-shrink-0";
+        selectedCat = btn.getAttribute("data-cat");
+        renderCatalog();
+      });
+    });
+
+    // Cart Modal Open/Close
+    const modal = document.getElementById("catalogCartModal");
+    document.getElementById("openCartBtn").addEventListener("click", () => modal.classList.remove("hidden"));
+    document.getElementById("viewCartBottomBtn").addEventListener("click", () => modal.classList.remove("hidden"));
+    document.getElementById("closeCartModal").addEventListener("click", () => modal.classList.add("hidden"));
+
+    // Send WhatsApp Order
+    document.getElementById("sendWhatsappBtn").addEventListener("click", () => {
+      if (clientCart.length === 0) return;
+
+      const name = document.getElementById("custName").value.trim() || "Cliente Web";
+      const date = document.getElementById("custDate").value.trim() || "Lo antes posible";
+      const delivery = document.getElementById("custDeliveryType").value;
+      const address = document.getElementById("custAddress").value.trim();
+      const notes = document.getElementById("custNotes").value.trim();
+
+      const total = clientCart.reduce((s, i) => s + (i.price * i.quantity), 0);
+      const itemsText = clientCart.map(i => `• ${i.quantity}x ${i.name} ($${(i.price * i.quantity).toFixed(2)})`).join("\n");
+
+      let message = `🎂 *¡HOLA SWEET SMILE PASTRY!* 🧁\nQuiero realizar el siguiente pedido desde el catálogo web:\n\n${itemsText}\n\n`;
+      message += `💰 *TOTAL A PAGAR:* $${total.toFixed(2)}\n\n`;
+      message += `👤 *Cliente:* ${name}\n`;
+      message += `📅 *Fecha/Hora:* ${date}\n`;
+      message += `🛵 *Modalidad:* ${delivery}\n`;
+      if (address) message += `📍 *Dirección:* ${address}\n`;
+      if (notes) message += `✍️ *Notas:* ${notes}\n\n`;
+      message += `¿Me confirman disponibilidad para coordinar el pago? ¡Muchas gracias!`;
+
+      const cleanPhone = whatsappPhone.replace(/[^0-9]/g, "");
+      const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, "_blank");
+    });
+
+    // Initial render
+    renderCatalog();
+  </script>
+</body>
+</html>

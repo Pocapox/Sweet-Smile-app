@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Sweet Smile - Pastry &amp; Bakery Manager</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed-dim": "#aec6ff", "on-primary-container": "#fefcff", "on-error": "#ffffff", "tertiary-container": "#db313f", "surface-bright": "#f9f9ff", "secondary-container": "#afcafe", "surface-variant": "#dde2f5", "error": "#ba1a1a", "inverse-on-surface": "#edf0ff", "primary": "#345aa0", "on-background": "#151b29", "on-primary-fixed-variant": "#1a4589", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdad8", "secondary": "#445f8c", "inverse-primary": "#aec6ff", "on-tertiary-container": "#fffbff", "surface-dim": "#d4daec", "on-error-container": "#93000a", "surface-tint": "#375da3", "outline-variant": "#c3c6d2", "on-primary-fixed": "#001a42", "tertiary-fixed-dim": "#ffb3b1", "secondary-fixed-dim": "#acc7fb", "on-surface": "#151b29", "primary-fixed": "#d8e2ff", "on-secondary-fixed": "#001b3e", "on-tertiary-fixed-variant": "#92001c", "inverse-surface": "#2a303f", "on-secondary-fixed-variant": "#2b4773", "surface-container-low": "#f1f3ff", "outline": "#747782", "surface": "#f9f9ff", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-highest": "#dde2f5", "on-secondary-container": "#395581", "surface-container": "#e9edff", "on-tertiary-fixed": "#410007", "secondary-fixed": "#d6e3ff", "primary-container": "#4f73bb", "background": "#f9f9ff", "surface-container-high": "#e2e8fb", "on-surface-variant": "#434751", "tertiary": "#b7102a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xs": "0.25rem", "space-sm": "0.75rem", "margin-desktop": "2.5rem", "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1.25rem", "space-lg": "1.5rem", "margin": "1rem", "space-xl": "2rem", "gutter-desktop": "1.75rem", "space-2xl": "3rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "data-metric": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "data-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 shadow-[0_2px_8px_rgba(52,90,160,0.08)]"><span class="material-symbols-outlined text-[22px]">bakery_dining</span></div><div class="min-w-0 flex flex-col"><div class="flex items-center gap-1 cursor-pointer"><span class="font-label-sm text-primary tracking-wider uppercase truncate">Sweet Smile Pastry</span><span class="material-symbols-outlined text-[16px] text-primary flex-shrink-0">expand_more</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Inventario</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Alertas y Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center p-0.5 rounded-full bg-surface-container-high"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Vr255DdZtDDpn27qlUs8yMsiPTGQklYKkIxGFs5rCT1lh2y0wOIHOLuxasrcUBXguUmKRDJZphMCuPz4JEWSI9aKkqwPLecz3bQvXJ8hPlyPGLRvmTC2DN0dFfKSZX9j1apKGuuP7t1722k8EsNTwxm9r4v7_WzmyxJHUr-xAzBdkDBeaIjaQ0Zy_HOvdCrc3zHyRnTXfzuULx9ZNNgb_03db3q6EIQ-GL2Wbk-ScRNwdamQGZB3Bd"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28 min-h-screen"><div class="flex flex-col w-full px-margin pb-6 gap-space-md">
+<!-- Tarjeta de Valor Monetizado y Título Funcional -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Almacén Central &amp; Despensa</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-data-metric text-data-metric text-on-surface">$1,845.20</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">valor total valorizado</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container/40 flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+</div>
+<div class="mt-space-sm pt-2 flex items-center justify-between text-on-surface-variant border-t border-surface-variant/40">
+<span class="font-body-sm text-body-sm flex items-center gap-1">
+<span class="inline-block w-2 h-2 rounded-full bg-primary"></span> 48 referencias activas
+      </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-0.5">
+        Auditado hace 2h
+        <span class="material-symbols-outlined text-[14px]">history</span>
+</span>
+</div>
+</div>
+<!-- Métricas Rápidas en 2 Columnas -->
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Óptimo -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">En Stock Óptimo</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">38</span>
+</div>
+</div>
+<!-- Crítico -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">error_outline</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Stock Crítico</span>
+<span class="font-headline-md text-headline-md text-tertiary font-bold">7</span>
+</div>
+</div>
+<!-- Insumos Totales -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">shelves</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Total Insumos</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">48</span>
+</div>
+</div>
+<!-- Agotados -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-outline flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">remove_shopping_cart</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Agotados Hoy</span>
+<span class="font-headline-md text-headline-md text-outline font-bold">3</span>
+</div>
+</div>
+</div>
+<!-- Tarjeta Suave de Alerta Urgente Fin de Semana -->
+<div class="bg-tertiary-fixed/60 rounded-xl p-space-md shadow-sm flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-tertiary-fixed font-bold leading-tight">Urgencia Producción</h2>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary/15 text-tertiary font-bold tracking-wide">PEDIDOS SAB/DOM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mt-1 leading-snug">
+        3 ingredientes requieren reposición inmediata para los compromisos del fin de semana (<strong class="font-bold">Mantequilla</strong>, <strong class="font-bold">Fresas Frescas</strong> y <strong class="font-bold">Cajas 25cm</strong>).
+      </p>
+<div class="mt-2.5 flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-full bg-tertiary text-on-tertiary font-label-md text-label-md shadow-sm active:scale-95 transition-all flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[15px]">send_time_extension</span>
+          Comprar Urgente
+        </button>
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed font-medium">Llega en 4h</span>
+</div>
+</div>
+</div>
+<!-- Barra de Búsqueda y Filtros de Categoría -->
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Buscar por insumo, lote o proveedor..." type="text"/>
+<button aria-label="Escanear Código de Barras" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg flex items-center justify-center text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">barcode_scanner</span>
+</button>
+</div>
+<!-- Chips Horizontales Desplazables -->
+<div class="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none -mx-margin px-margin">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap shadow-sm" type="button">
+        Todos (48)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container transition-colors" type="button">
+        Lácteos (9)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container transition-colors" type="button">
+        Harinas &amp; Azúcares (14)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container transition-colors" type="button">
+        Frutas &amp; Rellenos (11)
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container transition-colors" type="button">
+        Packaging (14)
+      </button>
+</div>
+</div>
+<!-- Botones de Acción Superior Primarios -->
+<div class="flex flex-col gap-2">
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">add_circle</span>
+      Registrar Entrada de Insumo (Factura)
+    </button>
+<button class="w-full h-11 rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+      Generar Lista de Compras para Proveedores
+    </button>
+</div>
+<!-- Encabezado de Lista Detallada con Ordenamiento -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">Inventario Activo</span>
+<button class="flex items-center gap-1 text-primary font-label-md text-label-md" type="button">
+<span>Prioridad: Críticos</span>
+<span class="material-symbols-outlined text-[16px]">swap_vert</span>
+</button>
+</div>
+<!-- Lista Detallada de Insumos -->
+<div class="flex flex-col gap-space-sm" id="inventory-list">
+<!-- Insumo 1: Mantequilla Repostera (Crítico) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-11 h-11 rounded-xl overflow-hidden bg-surface-container flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Artisanal blocks of rich dairy European butter 82 percent fat wrapped in vintage gold foil on a marble pastry board, warm ambient bakery bakery kitchen light, soft periwinkle accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSn7RfYAiVYIHdo7Z6YPh_WG9-TKa9hgOlyhCPjpYeTgfJVtEK7XOwNKa5KpWjzSapSXtR4WFTjwfbeQj5R_-POMRt3_WKOQwZzorEvHYTLRUoUr4LAX1QkkLeaFMOkJB3s8TgBsZQdmnK1O5wG4y3UNUyWcO9BF5Q0Eam5iFqlTKQeQHB0U9HNlEViQt479Gvj1wIjwKZIU9yq25GmYW3syeMNnQY3Bp_568nyg"/>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Mantequilla Repostera 82% MG</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lácteos • Costo prom: $9.80/kg</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-bold tracking-wide flex items-center gap-1 flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Crítico
+        </span>
+</div>
+<!-- Barra de Estado Visual de Stock -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-tertiary font-semibold">1.5 kg restantes</span>
+<span class="text-on-surface-variant font-medium">Mínimo: 5.0 kg</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 30%;"></div>
+</div>
+</div>
+<!-- Controles Rápidos (+/-) y Acciones -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 bg-surface-container-low rounded-lg p-0.5">
+<button aria-label="Reducir Mantequilla" class="w-8 h-8 rounded-md bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-95 shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-12 text-center font-headline-sm text-headline-sm text-on-surface">1.5</span>
+<button aria-label="Aumentar Mantequilla" class="w-8 h-8 rounded-md bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-95 shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant pr-1.5">kg</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+            Reordenar
+          </button>
+</div>
+</div>
+</div>
+<!-- Insumo 2: Harina de Trigo Pastelera (Óptimo) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-11 h-11 rounded-xl overflow-hidden bg-surface-container flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Refined white fine pastry flour in rustic organic paper bag, dusted on wood pastry counter with wheat ears in background, cozy clean patisserie tone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwgvet1uQjb_YFU5rs2H7EGFNW2utNoHxUiMJx-sA19lpVZRtV7ex4PoJshnm4UU7M3ZfOm0v1vyPOpOs_p5vd05T1TPm_dHm24IjnRlFOp-Mby2jjfKUEGH4P7bncO53CsQauop5IeuAgP5fZQ_cTa2di2wts4Kd_KZryKOTPNmnboDp500wW46xmA3zX9e4Tdhqwa9RN6UndR5IRDqh-J4oA4xbP2KvoRRtMiA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Harina de Trigo Pastelera</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Harinas &amp; Azúcares • Costo prom: $1.20/kg</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-secondary font-label-sm text-label-sm font-bold tracking-wide flex items-center gap-1 flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Óptimo
+        </span>
+</div>
+<!-- Barra de Estado Visual de Stock -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-semibold">18.0 kg restantes</span>
+<span class="text-on-surface-variant font-medium">Mínimo: 10.0 kg</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Controles Rápidos (+/-) y Acciones -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 bg-surface-container-low rounded-lg p-0.5">
+<button aria-label="Reducir Harina" class="w-8 h-8 rounded-md bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-95 shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-12 text-center font-headline-sm text-headline-sm text-on-surface">18.0</span>
+<button aria-label="Aumentar Harina" class="w-8 h-8 rounded-md bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-95 shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant pr-1.5">kg</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Insumo 3: Cerezas en Almíbar (Medio) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-11 h-11 rounded-xl overflow-hidden bg-surface-container flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Glass mason jars filled with glossy red maraschino cherries in clear syrup with fresh vanilla sticks on French bakery marble counter, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4IokPmMSVObLb55kccybtexvCeFrTY11pUknMAPqOkp70xsykNn-WzJdSsc6gYWDv7cdg_bPhfj1xebmz9xZjp-4fZGcTfh8wixk5eN7PFYO4kylEdZ2M6TFRM-pEGUU5jNcfKE49zrwK0OKIcaf0MVNpwTRE18-ZERqTn1LSvJm24Oiexd2EjOJZQw88rczzHP1gVdjqLR8HH8xRKEp9U0ciOijdJODOhVE6FA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Cerezas en Almíbar Sweet</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Frutas &amp; Rellenos • Costo prom: $4.50/frasco</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold tracking-wide flex items-center gap-1 flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Medio
+        </span>
+</div>
+<!-- Barra de Estado Visual de Stock -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">4 frascos restantes</span>
+<span class="text-on-surface-variant font-medium">Mínimo: 3 frascos</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 55%;"></div>
+</div>
+</div>
+<!-- Controles Rápidos (+/-) y Acciones -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 bg-surface-container-low rounded-lg p-0.5">
+<button aria-label="Reducir Cerezas" class="w-8 h-8 rounded-md bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-95 shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-12 text-center font-headline-sm text-headline-sm text-on-surface">4</span>
+<button aria-label="Aumentar Cerezas" class="w-8 h-8 rounded-md bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-95 shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant pr-1.5">u</span>
+</div>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Insumo 4: Cajas para Tarta 22cm (Crítico) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-11 h-11 rounded-xl overflow-hidden bg-surface-container flex-shrink-0 relative">
+<div class="w-full h-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">featured_play_list</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Cajas Tarta 22cm c/ Ventana</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Packaging • Costo prom: $0.85/ud</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-bold tracking-wide flex items-center gap-1 flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Crítico
+        </span>
+</div>
+<!-- Barra de Estado Visual de Stock -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-tertiary font-semibold">6 unidades restantes</span>
+<span class="text-on-surface-variant font-medium">Mínimo: 20 unidades</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Controles Rápidos (+/-) y Acciones -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 bg-surface-container-low rounded-lg p-0.5">
+<button aria-label="Reducir Cajas" class="w-8 h-8 rounded-md bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-95 shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-12 text-center font-headline-sm text-headline-sm text-on-surface">6</span>
+<button aria-label="Aumentar Cajas" class="w-8 h-8 rounded-md bg-surface-container-lowest text-on-surface flex items-center justify-center active:scale-95 shadow-2xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant pr-1.5">ud</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add_shopping_cart</span>
+          Pedir 50u
+        </button>
+</div>
+</div>
+</div>
+<!-- Micro-interacción Toast Notificación -->
+<div class="fixed bottom-20 left-4 right-4 bg-inverse-surface text-inverse-on-surface p-3 rounded-xl shadow-lg flex items-center justify-between gap-2 opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4 z-40" id="stock-toast">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm truncate" id="toast-message">Inventario actualizado con éxito</span>
+</div>
+<button class="text-inverse-on-surface hover:opacity-80" onclick="hideToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  function showToast(msg) {
+    const toast = document.getElementById('stock-toast');
+    const label = document.getElementById('toast-message');
+    if (!toast || !label) return;
+    label.textContent = msg;
+    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      hideToast();
+    }, 2800);
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('stock-toast');
+    if (toast) {
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }
+  }
+
+  // Interacción en botones rápidos +/-
+  document.querySelectorAll('#inventory-list button').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const isAdd = button.getAttribute('aria-label')?.includes('Aumentar');
+      const isSub = button.getAttribute('aria-label')?.includes('Reducir');
+      if (isAdd) {
+        showToast('Stock incrementado (+1 unidad)');
+      } else if (isSub) {
+        showToast('Merma / consumo registrado (-1 unidad)');
+      }
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(52,90,160,0.06)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inicio-finanzas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">dashboard</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Finanzas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="ventas-facturas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">point_of_sale</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Ventas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="recetario-costos" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">menu_book</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Recetas</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors group text-primary font-bold" data-path="inventario" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">inventory_2</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Stock</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="asistente-ia" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">auto_awesome</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Chef IA</span></a></div></nav></body></html>

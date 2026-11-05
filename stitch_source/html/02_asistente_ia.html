@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Sweet Smile - Pastry &amp; Bakery Manager</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed-dim": "#aec6ff", "on-primary-container": "#fefcff", "on-error": "#ffffff", "tertiary-container": "#db313f", "surface-bright": "#f9f9ff", "secondary-container": "#afcafe", "surface-variant": "#dde2f5", "error": "#ba1a1a", "inverse-on-surface": "#edf0ff", "primary": "#345aa0", "on-background": "#151b29", "on-primary-fixed-variant": "#1a4589", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdad8", "secondary": "#445f8c", "inverse-primary": "#aec6ff", "on-tertiary-container": "#fffbff", "surface-dim": "#d4daec", "on-error-container": "#93000a", "surface-tint": "#375da3", "outline-variant": "#c3c6d2", "on-primary-fixed": "#001a42", "tertiary-fixed-dim": "#ffb3b1", "secondary-fixed-dim": "#acc7fb", "on-surface": "#151b29", "primary-fixed": "#d8e2ff", "on-secondary-fixed": "#001b3e", "on-tertiary-fixed-variant": "#92001c", "inverse-surface": "#2a303f", "on-secondary-fixed-variant": "#2b4773", "surface-container-low": "#f1f3ff", "outline": "#747782", "surface": "#f9f9ff", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-highest": "#dde2f5", "on-secondary-container": "#395581", "surface-container": "#e9edff", "on-tertiary-fixed": "#410007", "secondary-fixed": "#d6e3ff", "primary-container": "#4f73bb", "background": "#f9f9ff", "surface-container-high": "#e2e8fb", "on-surface-variant": "#434751", "tertiary": "#b7102a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xs": "0.25rem", "space-sm": "0.75rem", "margin-desktop": "2.5rem", "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1.25rem", "space-lg": "1.5rem", "margin": "1rem", "space-xl": "2rem", "gutter-desktop": "1.75rem", "space-2xl": "3rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "data-metric": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "data-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 shadow-[0_2px_8px_rgba(52,90,160,0.08)]"><span class="material-symbols-outlined text-[22px]">bakery_dining</span></div><div class="min-w-0 flex flex-col"><div class="flex items-center gap-1 cursor-pointer"><span class="font-label-sm text-primary tracking-wider uppercase truncate">Sweet Smile Pastry</span><span class="material-symbols-outlined text-[16px] text-primary flex-shrink-0">expand_more</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Asistente Ia</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Alertas y Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center p-0.5 rounded-full bg-surface-container-high"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Vr255DdZtDDpn27qlUs8yMsiPTGQklYKkIxGFs5rCT1lh2y0wOIHOLuxasrcUBXguUmKRDJZphMCuPz4JEWSI9aKkqwPLecz3bQvXJ8hPlyPGLRvmTC2DN0dFfKSZX9j1apKGuuP7t1722k8EsNTwxm9r4v7_WzmyxJHUr-xAzBdkDBeaIjaQ0Zy_HOvdCrc3zHyRnTXfzuULx9ZNNgb_03db3q6EIQ-GL2Wbk-ScRNwdamQGZB3Bd"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28 min-h-screen"><div class="flex flex-col w-full px-margin pb-6 gap-space-md">
+<!-- AI Identity Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-md shadow-sm">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-primary/10 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[26px]">smart_toy</span>
+</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+</span>
+</div>
+<div class="min-w-0 flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Chef Dulce IA</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            Activo para optimizar tu pastelería
+          </span>
+</div>
+</div>
+<button aria-label="Historial de análisis" class="w-9 h-9 rounded-full bg-surface-container-lowest text-on-surface-variant flex items-center justify-center shadow-sm hover:text-primary transition-colors flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">history</span>
+</button>
+</div>
+</div>
+<!-- Quick Prompts Horizontal Scroll -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Acciones Sugeridas</span>
+<span class="font-label-sm text-label-sm text-primary">4 nuevas</span>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 pt-0.5 -mx-margin px-margin no-scrollbar">
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-secondary-container transition-colors shadow-sm" onclick="insertPrompt('Optimizar costos de receta del Pastel Tres Leches')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">lightbulb</span>
+<span class="font-label-md text-label-md">Optimizar costos de receta</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-secondary-container transition-colors shadow-sm" onclick="insertPrompt('Calcular precios recomendados por inflación en mantequilla')" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">trending_up</span>
+<span class="font-label-md text-label-md">Precios por inflación</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-secondary-container transition-colors shadow-sm" onclick="insertPrompt('Sugerir receta con mermas de fresas y claras')" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">bakery_dining</span>
+<span class="font-label-md text-label-md">Receta con stock sobrante</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-secondary-container transition-colors shadow-sm" onclick="insertPrompt('Analizar rentabilidad del mes actual vs mes anterior')" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">receipt_long</span>
+<span class="font-label-md text-label-md">Rentabilidad del mes</span>
+</button>
+</div>
+</div>
+<!-- Smart Insight Cards Grid -->
+<div class="flex flex-col gap-space-sm" id="insights-container">
+<!-- Card 1: Sobreprecio de Insumo (Alert / Pricing) -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all duration-300" id="card-cost-alert">
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold tracking-wide uppercase">Alerta de Insumo Crítico</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hace 18 min</span>
+</div>
+<div class="flex flex-col gap-2">
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Detecté que el precio del <span class="font-bold text-on-surface">huevo fresco</span> subió un <span class="text-tertiary font-bold">+14%</span> este mes. Te sugiero ajustar el precio del <span class="font-bold text-on-surface">Pastel Tres Leches</span> para mantener tu margen objetivo.
+        </p>
+<!-- Dynamic Micro Metric Comparison -->
+<div class="my-1 p-2.5 rounded-lg bg-surface-container flex items-center justify-between text-on-surface">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Precio actual</span>
+<span class="font-headline-sm text-headline-sm line-through text-on-surface-variant">$25.00</span>
+</div>
+<div class="flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Sugerido (+10%)</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">$27.50</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Margen</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">55%</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between gap-space-xs pt-1">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-tertiary text-on-tertiary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 transition-opacity active:scale-[0.98]" onclick="applyPriceAdjustment(this)" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Aplicar ajuste en 1 clic</span>
+</button>
+<button aria-label="Descartar recomendación" class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="dismissCard('card-cost-alert')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Receta Antimerma (Culinary Innovation) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all duration-300" id="card-recipe-rescue">
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">recycling</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold tracking-wide uppercase">Cero Mermas • Oportunidad</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+          Ahorro $48
+        </span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Tienes <span class="font-bold">4.2 kg de fresas frescas</span> próximas a madurar y <span class="font-bold">12 claras de huevo</span> en refrigeración. Creé una receta de alto rendimiento:
+        </p>
+<!-- Recipe Teaser Preview Card -->
+<div class="flex gap-space-sm p-space-xs rounded-xl bg-surface-container-low items-center">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Exquisite artisanal pavlova dessert with crisp white meringue base crowned with glossy glazed sweet strawberries, blueberries, and powdered sugar dusting on delicate ceramic plate, warm morning bakery window lighting, soft pastel styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNE-784HDJXB4kNP35FAQXvEwhuHkObvuW2SgU9tFfVE257l77KBRGI9Gg2zH1aeQzh3KINefMhOB5qhWFPMDT5btArKRjdgNVjjenJjJm_dn2COcCYGFjHYivh90FQEosh3nftZGQld4Edw0ydn6KOSanlyPNnxWeBL3Tq2DtufodUOpMW8aEsXsFpY57BsJREZA8K-h3dTlEbGiku3qIiO6JjcZ4_H5Gkb0qLg"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Pavlova de Frutos Rojos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rendimiento: 8 porciones individuales</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-primary font-bold">Costo unitario: $1.15</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• PVP: $4.50</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs pt-1">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 transition-opacity active:scale-[0.98]" onclick="openRecipeSheet()" type="button">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>Ver receta sugerida</span>
+</button>
+<button class="py-2.5 px-3 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface-container-high transition-colors" onclick="scheduleProduction(this)" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span>Hornear hoy</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Predicción de Demanda (Forecasting) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm">
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">query_stats</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">Demanda Estacional</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">+140% volumen</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+<span class="font-bold">Día de la Madre próximo:</span> se proyecta un incremento del 140% en pedidos de pasteles de 20cm. Revisa tu lista de compras sugerida para no agotar stock de crema chantilly ni harina repostera.
+      </p>
+<!-- Mini Demand Chart Graphic -->
+<div class="mt-space-xs p-2.5 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Proyección fin de semana</span>
+<span class="font-bold text-on-surface">68 pedidos estimados</span>
+</div>
+<!-- Simple inline mini bar track visual -->
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden flex">
+<div class="h-full bg-secondary" style="width: 35%"></div>
+<div class="h-full bg-primary" style="width: 65%"></div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Capacidad reservada: 35%</span>
+<span class="text-primary font-semibold">Espacio libre: 65%</span>
+</div>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs pt-1">
+<button class="flex-1 py-2.5 px-4 rounded-xl bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm hover:opacity-95 transition-opacity active:scale-[0.98]" onclick="showProcurementList()" type="button">
+<span class="material-symbols-outlined text-[18px]">shopping_cart_checkout</span>
+<span>Ver lista de compras sugerida</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive AI Query Input Field (Mobile Sticky Counterpart) -->
+<div class="rounded-xl bg-surface-container-lowest p-2 shadow-md">
+<form class="flex flex-col gap-2" onsubmit="handleSendQuery(event)">
+<div class="relative flex items-center">
+<input class="w-full py-3 pl-3.5 pr-20 rounded-xl bg-surface-container-low text-body-md font-body-md text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none transition-all" id="chef-prompt-input" placeholder="Pregúntale a la IA sobre costos, sustitución o stock..." type="text"/>
+<div class="absolute right-1.5 flex items-center gap-1">
+<button aria-label="Hablar con Chef Dulce" class="w-9 h-9 rounded-lg text-on-surface-variant hover:bg-surface-container flex items-center justify-center transition-colors" id="mic-btn" onclick="toggleMic()" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button aria-label="Enviar pregunta" class="w-9 h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center shadow-sm hover:opacity-90 active:scale-95 transition-all" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">security</span>
+          Respaldado en tus ventas reales
+        </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline" onclick="clearConversation()" type="button">
+          Limpiar chat
+        </button>
+</div>
+</form>
+</div>
+<!-- Micro Toast Feedback Notification (Hidden by default) -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md shadow-xl flex items-center gap-2 transition-all opacity-0 pointer-events-none -translate-y-2" id="ai-toast">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">check_circle</span>
+<span id="toast-message">Ajuste de precio aplicado en el POS.</span>
+</div>
+</div>
+<script>
+  function insertPrompt(text) {
+    const input = document.getElementById('chef-prompt-input');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('ai-toast');
+    const label = document.getElementById('toast-message');
+    if (toast && label) {
+      label.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-2');
+      }, 3200);
+    }
+  }
+
+  function applyPriceAdjustment(btn) {
+    btn.disabled = true;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Actualizando catálogo...</span>`;
+    setTimeout(() => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">done</span><span>¡Precio $27.50 activo!</span>`;
+      btn.classList.remove('bg-tertiary');
+      btn.classList.add('bg-secondary');
+      showToast('Pastel Tres Leches actualizado a $27.50 en Mostrador');
+    }, 600);
+  }
+
+  function dismissCard(cardId) {
+    const el = document.getElementById(cardId);
+    if (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'scale(0.95)';
+      setTimeout(() => el.remove(), 250);
+    }
+  }
+
+  function openRecipeSheet() {
+    showToast('Ficha técnica "Pavlova de Frutos Rojos" agregada a Recetario');
+  }
+
+  function scheduleProduction(btn) {
+    btn.innerHTML = `<span class="material-symbols-outlined text-[18px] text-primary">done</span><span>Agendado</span>`;
+    showToast('Lote de 8 Pavlovas agendado en Producción de Hoy');
+  }
+
+  function showProcurementList() {
+    showToast('Orden de compra de insumos generada en borrador');
+  }
+
+  function toggleMic() {
+    const mic = document.getElementById('mic-btn');
+    const isListening = mic.classList.toggle('text-tertiary');
+    if (isListening) {
+      showToast('Escuchando tu consulta pastelera...');
+    } else {
+      showToast('Micrófono detenido');
+    }
+  }
+
+  function handleSendQuery(e) {
+    e.preventDefault();
+    const input = document.getElementById('chef-prompt-input');
+    const text = input ? input.value.trim() : '';
+    if (!text) return;
+
+    showToast('Chef Dulce analizando: "' + text.substring(0, 24) + '..."');
+    input.value = '';
+  }
+
+  function clearConversation() {
+    showToast('Historial temporal de recomendaciones reiniciado');
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(52,90,160,0.06)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inicio-finanzas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">dashboard</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Finanzas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="ventas-facturas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">point_of_sale</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Ventas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="recetario-costos" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">menu_book</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Recetas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inventario" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">inventory_2</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Stock</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors group text-primary font-bold" data-path="asistente-ia" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">auto_awesome</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Chef IA</span></a></div></nav></body></html>

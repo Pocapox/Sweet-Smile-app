@@ -1,0 +1,45 @@
+# ====================================================================
+# Sweet Smile (Pastry & Bakery Manager) - Git Ignore Configuration
+# ====================================================================
+
+# Heavy Android build tool binaries (~49 MB)
+android_tools/
+
+# Compiled Android packages & signature files
+*.apk
+*.idsig
+*.aab
+
+# Android intermediate build directories & build artifacts
+android_project/classes/
+android_project/dex_out/
+android_project/gen/
+android_project/compiled_res.zip
+android_project/debug.keystore
+
+# Agent workspace metadata & logs
+.agents/
+
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.env
+.venv/
+env/
+venv/
+
+# Node / NPM artifacts
+node_modules/
+npm-debug.log*
+
+# OS & Editor temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

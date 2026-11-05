@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Sweet Smile - Pastry &amp; Bakery Manager</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed-dim": "#aec6ff", "on-primary-container": "#fefcff", "on-error": "#ffffff", "tertiary-container": "#db313f", "surface-bright": "#f9f9ff", "secondary-container": "#afcafe", "surface-variant": "#dde2f5", "error": "#ba1a1a", "inverse-on-surface": "#edf0ff", "primary": "#345aa0", "on-background": "#151b29", "on-primary-fixed-variant": "#1a4589", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdad8", "secondary": "#445f8c", "inverse-primary": "#aec6ff", "on-tertiary-container": "#fffbff", "surface-dim": "#d4daec", "on-error-container": "#93000a", "surface-tint": "#375da3", "outline-variant": "#c3c6d2", "on-primary-fixed": "#001a42", "tertiary-fixed-dim": "#ffb3b1", "secondary-fixed-dim": "#acc7fb", "on-surface": "#151b29", "primary-fixed": "#d8e2ff", "on-secondary-fixed": "#001b3e", "on-tertiary-fixed-variant": "#92001c", "inverse-surface": "#2a303f", "on-secondary-fixed-variant": "#2b4773", "surface-container-low": "#f1f3ff", "outline": "#747782", "surface": "#f9f9ff", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-highest": "#dde2f5", "on-secondary-container": "#395581", "surface-container": "#e9edff", "on-tertiary-fixed": "#410007", "secondary-fixed": "#d6e3ff", "primary-container": "#4f73bb", "background": "#f9f9ff", "surface-container-high": "#e2e8fb", "on-surface-variant": "#434751", "tertiary": "#b7102a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xs": "0.25rem", "space-sm": "0.75rem", "margin-desktop": "2.5rem", "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1.25rem", "space-lg": "1.5rem", "margin": "1rem", "space-xl": "2rem", "gutter-desktop": "1.75rem", "space-2xl": "3rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "data-metric": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "data-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 shadow-[0_2px_8px_rgba(52,90,160,0.08)]"><span class="material-symbols-outlined text-[22px]">bakery_dining</span></div><div class="min-w-0 flex flex-col"><div class="flex items-center gap-1 cursor-pointer"><span class="font-label-sm text-primary tracking-wider uppercase truncate">Sweet Smile Pastry</span><span class="material-symbols-outlined text-[16px] text-primary flex-shrink-0">expand_more</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Recetario &amp; Costos</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Alertas y Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center p-0.5 rounded-full bg-surface-container-high"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Vr255DdZtDDpn27qlUs8yMsiPTGQklYKkIxGFs5rCT1lh2y0wOIHOLuxasrcUBXguUmKRDJZphMCuPz4JEWSI9aKkqwPLecz3bQvXJ8hPlyPGLRvmTC2DN0dFfKSZX9j1apKGuuP7t1722k8EsNTwxm9r4v7_WzmyxJHUr-xAzBdkDBeaIjaQ0Zy_HOvdCrc3zHyRnTXfzuULx9ZNNgb_03db3q6EIQ-GL2Wbk-ScRNwdamQGZB3Bd"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28 min-h-screen"><div class="flex flex-col w-full px-margin pb-6 gap-space-md">
+<!-- Search & Primary Action Row -->
+<div class="flex items-center gap-space-xs mt-1">
+<div class="flex-1 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-xl bg-surface-container text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-sm" placeholder="Buscar receta, ingrediente o SKU..." type="text"/>
+</div>
+<button class="h-11 px-space-md rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center gap-1.5 flex-shrink-0 shadow-md hover:bg-primary-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Nueva</span>
+</button>
+</div>
+<!-- Filter Pills (Horizontal Scroll) -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 -mx-margin px-margin">
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px]">cake</span>
+<span>Tortas</span>
+<span class="w-4 h-4 rounded-full bg-on-primary/20 text-on-primary text-[10px] font-bold flex items-center justify-center">14</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex-shrink-0 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">blender</span>
+<span>Rellenos / Frosting</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex-shrink-0 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">bakery_dining</span>
+<span>Masas</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex-shrink-0 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">cookie</span>
+<span>Galletas</span>
+</button>
+</div>
+<!-- Featured Recipe Costing Card -->
+<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden">
+<!-- Visual Header & Badge -->
+<div class="relative w-full h-40 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Artisanal Black Forest Cake with glossy chocolate shavings, fresh maraschino cherries on top, whipped vanilla buttercream layers, soft natural patisserie studio lighting, elegant food photography in soft pastel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUGUg7P1C8LywkVtJqLkY4D53zo4tyqUmnYtj_JEKHBXSQekjkhTphOh6O5krRL-kggUEmVtQpV5VAcJo-uhyGaHVaSkGFQmO88hOeySu-Lh67MNxdFHCT75hrbeY62OdASz7Ur-oMQGjNBfLa_BdtDuLJX48i78-dVjXW6Ou3GZ538o51lALo-LkBQ3e_oHxldp3tfiQgF8qu4XHz9NXMmvxLHqgoZcwI36eenA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span>
+          Bestseller Pastelería
+        </span>
+</div>
+<div class="absolute top-3 right-3 flex items-center gap-1">
+<button aria-label="Editar Receta" class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface flex items-center justify-center shadow-sm hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Duplicar Receta" class="w-8 h-8 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface flex items-center justify-center shadow-sm hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="absolute bottom-3 left-3 right-3 text-inverse-on-surface">
+<div class="flex items-center gap-1 text-primary-fixed text-label-sm font-label-sm uppercase tracking-wider">
+<span>Receta Maestra #042</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold leading-tight">Pastel Selva Negra Especial 20cm</h2>
+</div>
+</div>
+<!-- Quick Meta Metrics Bar -->
+<div class="grid grid-cols-3 bg-surface-container-low px-4 py-2.5 text-center gap-2">
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">pie_chart</span> Rinde
+        </span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">10 porc.</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">timer</span> Tiempo
+        </span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">2h 30m</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">speed</span> Dificultad
+        </span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Media</span>
+</div>
+</div>
+<!-- Ingredient Costing Interactive Table -->
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">grocery</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Insumos y Costos Reales</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">6 ingredientes</span>
+</div>
+<div class="flex flex-col rounded-xl overflow-hidden bg-surface-container-low">
+<!-- Row 1 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Harina de Trigo Especial</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">400g • $2.00/kg</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex-shrink-0">$0.80</span>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Mantequilla sin sal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">250g • $10.00/kg</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex-shrink-0">$2.50</span>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-tertiary flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Cerezas al marrasquino</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">150g • $12.67/kg</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex-shrink-0">$1.90</span>
+</div>
+<!-- Row 4 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Chocolate amargo 70%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">200g • $16.00/kg</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex-shrink-0">$3.20</span>
+</div>
+<!-- Row 5 -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Huevos frescos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4 unidades • $0.225 c/u</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex-shrink-0">$0.90</span>
+</div>
+<!-- Row 6 (Packaging) -->
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-secondary-container flex-shrink-0"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Empaque &amp; Cinta Sweet Smile</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1 kit completo • Packaging</span>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex-shrink-0">$1.10</span>
+</div>
+</div>
+<!-- Add Ingredient Quick Button -->
+<button class="w-full py-2 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Añadir Insumo a la Fórmula</span>
+</button>
+<!-- Cost Breakdown Tiers -->
+<div class="flex flex-col gap-2 p-3 rounded-xl bg-surface-container-high">
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">inventory_2</span>
+            Costo Total de Insumos:
+          </span>
+<span class="font-semibold">$10.40</span>
+</div>
+<div class="flex items-center justify-between text-on-surface font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">electric_bolt</span>
+            Costo Indirecto (Gas/Luz/Mano de obra):
+          </span>
+<span class="font-semibold">$3.50</span>
+</div>
+<div class="h-px bg-outline-variant/40 my-1"></div>
+<div class="flex items-center justify-between font-headline-sm text-headline-sm text-on-surface">
+<span>Costo Total Producción:</span>
+<span class="font-bold text-primary">$13.90</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Costo unitario por porción (10 cortes):</span>
+<span class="font-semibold text-on-surface">$1.39 / porción</span>
+</div>
+</div>
+<!-- Smart Margin Calculator Spotlight -->
+<div class="p-3.5 rounded-xl bg-primary text-on-primary flex flex-col gap-2.5 shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">smart_toy</span>
+<span class="font-headline-sm text-headline-sm font-bold">Costeo Inteligente IA</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-on-primary/20 text-on-primary font-label-sm text-label-sm font-bold">Margen Objetivo: 60%</span>
+</div>
+<div class="flex items-end justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary-fixed">PVP Recomendado</span>
+<span class="font-data-metric text-data-metric leading-none font-extrabold tracking-tight">$34.75</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-primary-fixed">Ganancia Bruta Neta</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary-fixed">+$20.85 <span class="text-label-md">(60%)</span></span>
+</div>
+</div>
+<!-- Slider Simulator Representation -->
+<div class="flex flex-col gap-1 pt-1">
+<div class="flex justify-between font-label-sm text-label-sm text-primary-fixed">
+<span>Ajustar Margen</span>
+<span>60% (Recomendado)</span>
+</div>
+<div class="w-full bg-on-primary/30 h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary-fixed h-full rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<!-- Quick Actions for Formula -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Recalcular Alzas</span>
+</button>
+<button class="flex-1 h-10 rounded-xl bg-primary-container text-on-primary-container font-label-md text-label-md flex items-center justify-center gap-1.5 hover:opacity-90 shadow-sm transition-opacity" type="button">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Guardar Cambios</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Saved Recipes Library Header -->
+<div class="flex items-center justify-between pt-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Recetas Guardadas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monitoreo de rendimiento e inflación de insumos</p>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">28 en catálogo</span>
+</div>
+<!-- Saved Recipes List -->
+<div class="flex flex-col gap-3">
+<!-- Card 1 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-3 hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Artisanal red velvet cupcake with delicate cream cheese swirl and ruby red sponge crumb topping, soft ambient pastry shop presentation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0n_r97UEfEQ7iRZVjqUxjdG6aVZDKfDEYk4cNnc7ft2idgF8O_puOb9q-3vMB7vra02Ljah9QFbzBj1pjbfUk5lYe8H672RUL3C2M7kr8zWSwkvXd0DrgwAox96qP5k9zk5SYf7N4P4DTp68Xd-o3nEsr_WHgJEAUSEO65YZNRORbkaV8jSqdektY0uMdbQftGt6FkzyCEelrGmcowG-IJ1CFAgyrY63NMEikYg"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-0.5">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Cupcakes Red Velvet (x12)</h4>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold flex-shrink-0">Margen 62%</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Costo: $6.20</span>
+<span>•</span>
+<span class="font-semibold text-on-surface">Venta: $16.50</span>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Duplicar
+          </button>
+<button class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Actualizar Precios
+          </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-3 hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Golden crisp French buttery croissants stacked neatly on marble counter with flaking pastry texture and soft morning bakery light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHagS3erdvqQck-KMSBlLZdvrMn6vDF7u2VnfdWlHtVoypdDUNk58vg0FFTkzhDorA8EZzH-l5_ZqJ0pH2q6xtjcG1CfEMUeDphA3HNowVdcsP_XozNX7bQ9RIHyH7pt0Op13aKfxciFTldq6qEknCLpjgMncXOESm_ITSM1UGZKRwNfrTGzCyoz-zcyk3quXyA_7yUjpk0NYjjQ-JB-ow2ZETS1V0toACHWcMCg"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-0.5">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Croissant Mantequilla Real</h4>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold flex-shrink-0">Margen 48%</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Costo: $1.45</span>
+<span>•</span>
+<span class="font-semibold text-on-surface">Venta: $2.80</span>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Duplicar
+          </button>
+<button class="font-label-sm text-label-sm text-tertiary flex items-center gap-0.5 hover:underline font-bold" type="button">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> Ajustar por alza mantequilla (+14%)
+          </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-3 bg-surface-container-lowest rounded-xl shadow-sm flex items-center gap-3 hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Silky smooth dark chocolate ganache drip cake with macarons and edible gold leaf in luxury French patisserie style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUKRVlAAP6vyLh_worn1DJeZo5dvcvBxl2eqRxlOtVoAjx4pIs_ifFAM1y57K4Ujb1qb1ZeZj6b9sqoanQHR5dYyjGU00Q0_sN0gBh3Kxp1Wp08d56PdxuObeOc1VQe_jrLUaXybckejDbgEr1wxf9apMXqPBLhGwfzBKqG38HEvBZKS183HQA4JDN5OROVh8R3kjjFLmVuh9z9jqMi3G7v1F9bRZwPkajU_bzjw"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-0.5">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Frosting Ganache Belga 1kg</h4>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold flex-shrink-0">Margen 65%</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Costo: $8.90</span>
+<span>•</span>
+<span class="font-semibold text-on-surface">Venta: $25.50</span>
+</div>
+<div class="flex items-center gap-3 pt-1">
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Duplicar
+          </button>
+<button class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Actualizar Precios
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Delight Banner -->
+<div class="p-3.5 rounded-xl bg-surface-container-high flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Alerta de Margen General</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">El costo del cacao subió 4.2% esta semana. Revisa las recetas derivadas para mantener el 60% de margen.</span>
+</div>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(52,90,160,0.06)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inicio-finanzas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">dashboard</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Finanzas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="ventas-facturas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">point_of_sale</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Ventas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="recetario-costos" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">menu_book</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Recetas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inventario" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">inventory_2</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Stock</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="asistente-ia" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">auto_awesome</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Chef IA</span></a></div></nav></body></html>

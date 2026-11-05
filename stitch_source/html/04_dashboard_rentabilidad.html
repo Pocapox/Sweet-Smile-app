@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Sweet Smile - Pastry &amp; Bakery Manager</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed-dim": "#aec6ff", "on-primary-container": "#fefcff", "on-error": "#ffffff", "tertiary-container": "#db313f", "surface-bright": "#f9f9ff", "secondary-container": "#afcafe", "surface-variant": "#dde2f5", "error": "#ba1a1a", "inverse-on-surface": "#edf0ff", "primary": "#345aa0", "on-background": "#151b29", "on-primary-fixed-variant": "#1a4589", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdad8", "secondary": "#445f8c", "inverse-primary": "#aec6ff", "on-tertiary-container": "#fffbff", "surface-dim": "#d4daec", "on-error-container": "#93000a", "surface-tint": "#375da3", "outline-variant": "#c3c6d2", "on-primary-fixed": "#001a42", "tertiary-fixed-dim": "#ffb3b1", "secondary-fixed-dim": "#acc7fb", "on-surface": "#151b29", "primary-fixed": "#d8e2ff", "on-secondary-fixed": "#001b3e", "on-tertiary-fixed-variant": "#92001c", "inverse-surface": "#2a303f", "on-secondary-fixed-variant": "#2b4773", "surface-container-low": "#f1f3ff", "outline": "#747782", "surface": "#f9f9ff", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface-container-highest": "#dde2f5", "on-secondary-container": "#395581", "surface-container": "#e9edff", "on-tertiary-fixed": "#410007", "secondary-fixed": "#d6e3ff", "primary-container": "#4f73bb", "background": "#f9f9ff", "surface-container-high": "#e2e8fb", "on-surface-variant": "#434751", "tertiary": "#b7102a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xs": "0.25rem", "space-sm": "0.75rem", "margin-desktop": "2.5rem", "space-md": "1rem", "space-xs": "0.5rem", "gutter": "1.25rem", "space-lg": "1.5rem", "margin": "1rem", "space-xl": "2rem", "gutter-desktop": "1.75rem", "space-2xl": "3rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "data-metric": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "data-metric": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 shadow-[0_2px_8px_rgba(52,90,160,0.08)]"><span class="material-symbols-outlined text-[22px]">bakery_dining</span></div><div class="min-w-0 flex flex-col"><div class="flex items-center gap-1 cursor-pointer"><span class="font-label-sm text-primary tracking-wider uppercase truncate">Sweet Smile Pastry</span><span class="material-symbols-outlined text-[16px] text-primary flex-shrink-0">expand_more</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Inicio / Finanzas</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Alertas y Notificaciones" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center p-0.5 rounded-full bg-surface-container-high"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Vr255DdZtDDpn27qlUs8yMsiPTGQklYKkIxGFs5rCT1lh2y0wOIHOLuxasrcUBXguUmKRDJZphMCuPz4JEWSI9aKkqwPLecz3bQvXJ8hPlyPGLRvmTC2DN0dFfKSZX9j1apKGuuP7t1722k8EsNTwxm9r4v7_WzmyxJHUr-xAzBdkDBeaIjaQ0Zy_HOvdCrc3zHyRnTXfzuULx9ZNNgb_03db3q6EIQ-GL2Wbk-ScRNwdamQGZB3Bd"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28 min-h-screen"><div class="flex flex-col w-full px-margin pb-space-lg gap-space-md">
+<!-- Saludo & Selector de Período -->
+<div class="flex items-center justify-between gap-space-xs mt-space-xs">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">¡Hola, Pastelera!</span>
+<span class="text-[20px] select-none">👋</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Horneando éxitos hoy en el obrador</p>
+</div>
+<!-- Segmented Filter -->
+<div class="flex p-0.5 bg-surface-container rounded-full shadow-sm flex-shrink-0" id="period-selector">
+<button class="period-btn px-2.5 py-1 text-on-surface-variant font-label-sm text-label-sm rounded-full transition-all" data-period="hoy" type="button">Hoy</button>
+<button class="period-btn px-2.5 py-1 text-on-surface-variant font-label-sm text-label-sm rounded-full transition-all" data-period="semana" type="button">Semana</button>
+<button class="period-btn active bg-surface-container-lowest text-primary font-bold shadow-sm font-label-sm text-label-sm rounded-full transition-all" data-period="mes" type="button">Este Mes</button>
+</div>
+</div>
+<!-- Alerta Inteligente / Momento Dulce de Negocio -->
+<div class="relative overflow-hidden bg-primary-fixed/40 rounded-xl p-space-sm flex items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">cake</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Top Rentabilidad</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium line-clamp-1">Cheesecake de Fresa lidera con 58% de margen</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex-shrink-0 shadow-sm hover:opacity-95 active:scale-95 transition-transform flex items-center gap-1" type="button">
+<span>Potenciar</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Bento Grid de KPIs Clave -->
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Ganancia Neta (Hero KPI - 2 cols) -->
+<div class="col-span-2 bg-secondary-fixed/45 rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant uppercase tracking-wider font-semibold">Ganancia Neta Disponible</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-data-metric text-data-metric text-on-secondary-fixed tracking-tight">$1,420.50</span>
+<div class="flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 text-primary font-label-sm text-label-sm shadow-xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+18.4%</span>
+</div>
+</div>
+</div>
+<div class="w-9 h-9 rounded-xl bg-surface-container-lowest/70 flex items-center justify-center text-secondary shadow-xs">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-body-sm text-body-sm text-on-secondary-fixed-variant">
+<span>Cálculo post-costeo de lotes horneados</span>
+<span class="font-medium text-primary">vs. $1,200 mes ant.</span>
+</div>
+</div>
+<!-- Ventas Totales -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ventas</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+</div>
+</div>
+<div class="my-2">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight block">$3,850.00</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">84 pedidos entregados</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+<span>Ticket prom: $45.83</span>
+</div>
+</div>
+<!-- Gastos Operativos -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Gastos</span>
+<div class="w-7 h-7 rounded-lg bg-error-container/70 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+</div>
+</div>
+<div class="my-2">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight block">$2,429.50</span>
+<span class="font-body-sm text-body-sm text-tertiary font-medium">Harinas, crema, cajas</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-tertiary">tune</span>
+<span>63.1% de ventas</span>
+</div>
+</div>
+</div>
+<!-- Margen Rentabilidad Banner Resumen -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">percent</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Margen Operativo Global</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">36.9% <span class="font-body-sm text-body-sm text-primary font-medium">(Saludable artesanal)</span></span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+<span>Meta: &gt;32%</span>
+</div>
+</div>
+<!-- Accesos Rápidos Táctiles (Barra de Acción) -->
+<div class="flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-2.5 px-2 bg-primary text-on-primary rounded-xl font-label-lg text-label-lg shadow-sm flex items-center justify-center gap-1.5 active:scale-98 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span class="truncate">Nueva Venta</span>
+</button>
+<button class="flex-1 py-2.5 px-2 bg-surface-container-high text-on-surface rounded-xl font-label-lg text-label-lg shadow-xs flex items-center justify-center gap-1.5 active:scale-98 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">post_add</span>
+<span class="truncate">Gasto Insumo</span>
+</button>
+<button aria-label="Ver Facturas" class="w-11 h-11 bg-surface-container-low text-primary rounded-xl flex items-center justify-center shadow-xs flex-shrink-0 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">request_quote</span>
+</button>
+</div>
+<!-- Gráfica Interactiva: Rentabilidad Semanal (Ingresos vs Gastos) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Curva de Rentabilidad Semanal</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toca las barras para auditar el día</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ingresos</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Costos</span>
+</div>
+</div>
+</div>
+<!-- Contenedor Visual de Barras -->
+<div class="relative pt-6 pb-2">
+<!-- Tooltip dinámico contextual -->
+<div class="absolute -top-1 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-2.5 py-1 rounded-lg text-center shadow-md font-label-sm text-label-sm transition-all duration-200 pointer-events-none opacity-90" id="chart-tooltip">
+<span id="tooltip-text">Sábado: $820 Ingresos | $390 Gastos (+$430)</span>
+</div>
+<!-- Grid de Barras -->
+<div class="grid grid-cols-7 gap-1.5 h-36 items-end pt-2">
+<!-- Lun -->
+<div class="chart-day flex flex-col items-center gap-1 group cursor-pointer" data-day="Lunes" data-exp="210" data-inc="340">
+<div class="w-full flex items-end justify-center gap-1 h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm transition-all group-hover:bg-outline" style="height: 48%;"></div>
+<div class="w-2.5 bg-primary/70 rounded-t-sm transition-all group-hover:bg-primary" style="height: 60%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">L</span>
+</div>
+<!-- Mar -->
+<div class="chart-day flex flex-col items-center gap-1 group cursor-pointer" data-day="Martes" data-exp="240" data-inc="410">
+<div class="w-full flex items-end justify-center gap-1 h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm transition-all group-hover:bg-outline" style="height: 52%;"></div>
+<div class="w-2.5 bg-primary/70 rounded-t-sm transition-all group-hover:bg-primary" style="height: 68%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">M</span>
+</div>
+<!-- Mie -->
+<div class="chart-day flex flex-col items-center gap-1 group cursor-pointer" data-day="Miércoles" data-exp="280" data-inc="390">
+<div class="w-full flex items-end justify-center gap-1 h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm transition-all group-hover:bg-outline" style="height: 60%;"></div>
+<div class="w-2.5 bg-primary/70 rounded-t-sm transition-all group-hover:bg-primary" style="height: 65%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">X</span>
+</div>
+<!-- Jue -->
+<div class="chart-day flex flex-col items-center gap-1 group cursor-pointer" data-day="Jueves" data-exp="310" data-inc="520">
+<div class="w-full flex items-end justify-center gap-1 h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm transition-all group-hover:bg-outline" style="height: 64%;"></div>
+<div class="w-2.5 bg-primary/80 rounded-t-sm transition-all group-hover:bg-primary" style="height: 80%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">J</span>
+</div>
+<!-- Vie -->
+<div class="chart-day flex flex-col items-center gap-1 group cursor-pointer" data-day="Viernes" data-exp="360" data-inc="680">
+<div class="w-full flex items-end justify-center gap-1 h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm transition-all group-hover:bg-outline" style="height: 72%;"></div>
+<div class="w-2.5 bg-primary/90 rounded-t-sm transition-all group-hover:bg-primary" style="height: 92%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">V</span>
+</div>
+<!-- Sab (Pico de repostería) -->
+<div class="chart-day flex flex-col items-center gap-1 group cursor-pointer active-day" data-day="Sábado" data-exp="390" data-inc="820">
+<div class="w-full flex items-end justify-center gap-1 h-28 relative">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm" style="height: 78%;"></div>
+<div class="w-2.5 bg-primary rounded-t-sm shadow-xs" style="height: 100%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">S</span>
+</div>
+<!-- Dom -->
+<div class="chart-day flex flex-col items-center gap-1 group cursor-pointer" data-day="Domingo" data-exp="320" data-inc="690">
+<div class="w-full flex items-end justify-center gap-1 h-28">
+<div class="w-2.5 bg-surface-container-highest rounded-t-sm transition-all group-hover:bg-outline" style="height: 66%;"></div>
+<div class="w-2.5 bg-primary/80 rounded-t-sm transition-all group-hover:bg-primary" style="height: 94%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">D</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Desglose de Gastos en Dona/Progreso y Productos Estrella -->
+<div class="grid grid-cols-1 gap-space-xs">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Distribución de Gastos</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Total mes: $2,429.50</span>
+</div>
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">donut_large</span>
+</div>
+<!-- Segmented Visual Bar -->
+<div class="h-3.5 w-full rounded-full bg-surface-container flex overflow-hidden mb-space-sm shadow-inner">
+<div class="bg-primary h-full" style="width: 62%" title="Insumos: 62%"></div>
+<div class="bg-secondary h-full" style="width: 18%" title="Mano de obra: 18%"></div>
+<div class="bg-primary-container h-full" style="width: 12%" title="Servicios/Local: 12%"></div>
+<div class="bg-tertiary-container h-full" style="width: 8%" title="Empaques: 8%"></div>
+</div>
+<!-- Leyenda con desglose táctil -->
+<div class="grid grid-cols-2 gap-y-2.5 gap-x-2 text-on-surface pt-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary flex-shrink-0"></span>
+<div class="min-w-0">
+<div class="flex items-baseline justify-between gap-1">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Insumos y Harinas</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">62%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">$1,506.29</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary flex-shrink-0"></span>
+<div class="min-w-0">
+<div class="flex items-baseline justify-between gap-1">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Mano de Obra</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">18%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">$437.31</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container flex-shrink-0"></span>
+<div class="min-w-0">
+<div class="flex items-baseline justify-between gap-1">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Servicios / Hornos</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">12%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">$291.54</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container flex-shrink-0"></span>
+<div class="min-w-0">
+<div class="flex items-baseline justify-between gap-1">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Cajas y Empaques</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">8%</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">$194.36</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-sección de Productos Más Rentables -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary">local_florist</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Margen por Especialidad</h3>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline" href="#">Ver Recetario</a>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-space-xs rounded-xl flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<img class="w-10 h-10 rounded-lg object-cover flex-shrink-0" data-alt="Artisanal Basque burnt cheesecake slice with fresh strawberry coulis and soft glazed crust on a pastel ceramic plate in a warm natural light bakery setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9SAdmLp8guizBKJd4Zwlr24RKxGScAotsml_LSxSZBobd6Nn90gIiHkMUj0AmiXkjqhxk5cPB5fV5BtDjLnXCLRceh0lO5JPqvxd5s86YV2263l5z7Ni_uXOxLgT7yPXakp-G4Yx1IcQH8JLuGP69Y_Oa-wvEtHMtItmgcBYAhBUq3WBQ5c0PJfud9AWVdz-JY-4c3mfHyRIEX8PsId95EUA8IVraZQ5HG6Gfg"/>
+<div class="min-w-0">
+<h4 class="font-label-lg text-label-lg text-on-surface truncate">Cheesecake de Fresa</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Costo $11.20 | Venta $28.00</span>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-label-lg text-label-lg text-primary font-bold block">+58%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Margen</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-space-xs rounded-xl flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-space-xs min-w-0">
+<img class="w-10 h-10 rounded-lg object-cover flex-shrink-0" data-alt="Golden freshly baked flaky butter croissants arranged on rustic baker parchment paper with soft vanilla ambient background light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5SaRNBTOP1mUc2qrzbxq670soQBiefsSyD-hsk34UiMk_o9gm0yu64W2BXRPc7W6WVq5eSE9QcsuSZF7Wbh4V04Q63ZXtvPXVI5unVMw2-r4T1ZpsPwUL0btcC_DuJBdoyHV31YJ0Ut-j_CQO7yl3lNPiHci9_c-TDKX6SEtotyL633bQ6-XxYmlixxg0irbegGW5C-TZn5PHU3gafOMrgneEhO5d0fLFTdzNGw"/>
+<div class="min-w-0">
+<h4 class="font-label-lg text-label-lg text-on-surface truncate">Croissant de Mantequilla</h4>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Costo $1.45 | Venta $3.80</span>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-label-lg text-label-lg text-primary font-bold block">+52%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Margen</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interacción: selector de período
+  const periodBtns = document.querySelectorAll('.period-btn');
+  periodBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      periodBtns.forEach(b => {
+        b.classList.remove('active', 'bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('active', 'bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant');
+    });
+  });
+
+  // Micro-interacción: interactividad del gráfico de rentabilidad semanal
+  const days = document.querySelectorAll('.chart-day');
+  const tooltip = document.getElementById('chart-tooltip');
+  const tooltipText = document.getElementById('tooltip-text');
+
+  days.forEach(day => {
+    day.addEventListener('click', () => {
+      days.forEach(d => {
+        const textSpan = d.querySelector('span:last-child');
+        textSpan.classList.remove('text-primary', 'font-bold');
+        textSpan.classList.add('text-on-surface-variant');
+      });
+      const activeSpan = day.querySelector('span:last-child');
+      activeSpan.classList.remove('text-on-surface-variant');
+      activeSpan.classList.add('text-primary', 'font-bold');
+
+      const dayName = day.getAttribute('data-day');
+      const inc = day.getAttribute('data-inc');
+      const exp = day.getAttribute('data-exp');
+      const diff = (parseFloat(inc) - parseFloat(exp)).toFixed(0);
+
+      tooltipText.innerText = `${dayName}: $${inc} Ingresos | $${exp} Gastos (+$${diff})`;
+      tooltip.classList.add('scale-105');
+      setTimeout(() => tooltip.classList.remove('scale-105'), 200);
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(52,90,160,0.06)]" data-active-classes="text-primary font-bold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inicio-finanzas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">dashboard</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Finanzas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="ventas-facturas" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">point_of_sale</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Ventas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="recetario-costos" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">menu_book</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Recetas</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="inventario" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">inventory_2</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Stock</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-colors group" data-path="asistente-ia" href="#"><div class="w-8 h-7 rounded-full flex items-center justify-center group-hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">auto_awesome</span></div><span class="font-label-sm text-label-sm leading-tight mt-0.5">Chef IA</span></a></div></nav></body></html>
