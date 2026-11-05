@@ -2,6 +2,7 @@
 import { store } from '../store.js';
 import { notifications } from '../notifications.js';
 import { GeminiAPI } from '../gemini-api.js';
+import { uiToast } from '../ui-feedback.js';
 
 let chatHistory = [
   {
@@ -282,7 +283,7 @@ function attachChefAIEvents(container) {
   container.querySelector("#btnSaveGeminiKey")?.addEventListener("click", () => {
     const val = keyInput?.value?.trim() || "";
     GeminiAPI.setApiKey(val);
-    alert(val ? "✅ Clave de Google Gemini guardada con éxito." : "Clave eliminada.");
+    uiToast.success(val ? "✅ Clave de Google Gemini guardada con éxito." : "Clave eliminada.");
     keyModal?.classList.add("hidden");
     renderChefAIView(container);
   });
@@ -290,7 +291,7 @@ function attachChefAIEvents(container) {
   container.querySelector("#btnRemoveGeminiKey")?.addEventListener("click", () => {
     GeminiAPI.setApiKey("");
     if (keyInput) keyInput.value = "";
-    alert("Clave de Gemini eliminada.");
+    uiToast.info("Clave de Gemini eliminada.");
     keyModal?.classList.add("hidden");
     renderChefAIView(container);
   });
@@ -312,7 +313,7 @@ function attachChefAIEvents(container) {
       notifications.sendPush("✅ Precio Actualizado", {
         body: "Pastel Red Velvet ajustado a $28.00 para mantener 58% de margen."
       });
-      alert("¡Ajuste aplicado! El precio en el POS y catálogo ahora es de $28.00.");
+      uiToast.success("¡Ajuste aplicado! El precio en el POS y catálogo ahora es de $28.00.");
       container.querySelector("#card-cost-alert")?.remove();
     }
   });

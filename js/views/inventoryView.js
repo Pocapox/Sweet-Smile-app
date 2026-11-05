@@ -1,5 +1,5 @@
-// js/views/inventoryView.js - Stitch Screen 1: Gestión de Inventario, Insumos & Alertas
 import { store } from '../store.js';
+import { uiToast, uiModal } from '../ui-feedback.js';
 
 let currentCategoryFilter = "all";
 
@@ -277,46 +277,41 @@ function attachInventoryEvents(container) {
 
   // Edit Supply
   container.querySelectorAll(".inv-edit-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
       const id = btn.getAttribute("data-id");
       const item = store.getInventoryItem(id);
       if (!item) return;
 
-      const newStock = prompt(`Stock actual de ${item.name} (${item.unit}):`, item.stock);
-      if (newStock === null) return;
-      const newCost = prompt(`Costo por ${item.unit} ($):`, item.costPerUnit);
-      if (newCost === null) return;
+      const editData = await uiModal.showEditSupplyModal(item);
+      if (!editData) return;
 
-      item.stock = parseFloat(newStock) || item.stock;
-      item.costPerUnit = parseFloat(newCost) || item.costPerUnit;
+      item.stock = editData.stock;
+      item.costPerUnit = editData.costPerUnit;
       store.saveInventoryItem(item);
+      uiToast.success(`Insumo "${item.name}" actualizado.`);
       renderInventoryView(container);
     });
   });
 
   // Add Supply Entry
-  container.querySelector("#btnAddSupplyEntry")?.addEventListener("click", () => {
-    const name = prompt("Nombre del nuevo insumo:", "Chocolate Blanco 32%");
-    if (!name) return;
-    const category = prompt("Categoría (Lácteos, Harinas, Frutas, Packaging):", "Harinas") || "Harinas";
-    const stock = parseFloat(prompt("Cantidad inicial recibida:", "5.0")) || 1.0;
-    const unit = prompt("Unidad (kg, L, unid, kit):", "kg") || "kg";
-    const costPerUnit = parseFloat(prompt("Costo unitario de compra ($):", "12.50")) || 5.0;
-    const supplier = prompt("Proveedor:", "Distribuidora Dulce") || "Proveedor Directo";
+  container.querySelector("#btnAddSupplyEntry")?.addEventListener("click", async () => {
+    const data = await uiModal.showAddSupplyModal();
+    if (!data) return;
 
     store.saveInventoryItem({
-      name,
-      category,
-      stock,
-      unit,
-      minStock: stock * 0.5,
-      costPerUnit,
-      supplier,
+      name: data.name,
+      category: data.category,
+      stock: data.stock,
+      unit: data.unit,
+      minStock: data.stock * 0.5,
+      costPerUnit: data.costPerUnit,
+      supplier: data.supplier,
       expDate: "2027-01-01",
       status: "optimal",
       image: null
     });
 
+    uiToast.success(`Insumo "${data.name}" agregado con éxito.`);
     renderInventoryView(container);
   });
 
@@ -324,7 +319,7 @@ function attachInventoryEvents(container) {
   container.querySelector("#btnGenerateShoppingList")?.addEventListener("click", () => {
     const critical = inventory.filter(i => i.stock <= i.minStock);
     if (critical.length === 0) {
-      alert("¡Todos los insumos están en nivel óptimo!");
+      uiToast.info("¡Todos los insumos están en nivel óptimo!");
       return;
     }
 

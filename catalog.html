@@ -270,6 +270,9 @@
             if (ex) ex.quantity++;
             else clientCart.push({ ...prod, quantity: 1 });
             updateCartUI();
+            if (window.uiToast) {
+              window.uiToast.success(`"${prod.name}" añadido al carrito`);
+            }
           }
         });
       });
@@ -347,7 +350,12 @@
 
     // Send WhatsApp Order
     document.getElementById("sendWhatsappBtn").addEventListener("click", () => {
-      if (clientCart.length === 0) return;
+      if (clientCart.length === 0) {
+        if (window.uiToast) {
+          window.uiToast.warning("Tu carrito está vacío. Añade algún postre antes de ordenar.");
+        }
+        return;
+      }
 
       const name = document.getElementById("custName").value.trim() || "Cliente Web";
       const date = document.getElementById("custDate").value.trim() || "Lo antes posible";
@@ -375,5 +383,11 @@
     // Initial render
     renderCatalog();
   </script>
+
+  <!-- Modern UI Feedback Containers (Requirement R1) -->
+  <div id="toastContainer" aria-live="polite" class="fixed top-4 right-4 z-50 flex flex-col gap-2.5 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+  <div id="uiModalContainer" class="fixed inset-0 z-50 pointer-events-none flex items-center justify-center"></div>
+
+  <script type="module" src="js/ui-feedback.js"></script>
 </body>
 </html>

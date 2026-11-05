@@ -1,6 +1,6 @@
-// js/views/catalogShareView.js - Configuración del Catálogo Web para GitHub Pages & Generador de QR
 import { store } from '../store.js';
 import { QRGenerator } from '../qr-generator.js';
+import { uiToast } from '../ui-feedback.js';
 
 export function renderCatalogShareView(container) {
   const settings = store.getSettings();
@@ -187,7 +187,7 @@ function attachCatalogShareEvents(container, defaultUrl) {
     const val = container.querySelector("#cfgWhatsappNumber")?.value?.trim();
     if (val) {
       store.updateSettings({ whatsappNumber: val });
-      alert("¡Número de WhatsApp guardado con éxito!");
+      uiToast.success("¡Número de WhatsApp guardado con éxito!");
     }
   });
 
@@ -195,7 +195,7 @@ function attachCatalogShareEvents(container, defaultUrl) {
   container.querySelector("#btnCopyCatalogUrl")?.addEventListener("click", () => {
     const val = container.querySelector("#cfgCatalogUrl")?.value;
     navigator.clipboard.writeText(val).then(() => {
-      alert("¡Enlace copiado al portapapeles!");
+      uiToast.success("¡Enlace copiado al portapapeles!");
     });
   });
 

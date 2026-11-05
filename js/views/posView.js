@@ -1,5 +1,5 @@
-// js/views/posView.js - Stitch Screen 6: Creador de Ventas, POS, Facturación & Modificación
 import { store } from '../store.js';
+import { uiToast, uiModal } from '../ui-feedback.js';
 
 let currentCategory = "all";
 let discountPercent = 0;
@@ -505,10 +505,18 @@ function attachPosEvents(container) {
 
   // Invoice Actions: Edit, Print, Delete
   container.querySelectorAll(".delete-invoice-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", async () => {
       const id = btn.getAttribute("data-id");
-      if (confirm(`¿Estás seguro de eliminar el comprobante ${id}?`)) {
+      const confirmed = await uiModal.confirm({
+        title: "Eliminar Comprobante",
+        message: `¿Estás seguro de eliminar el comprobante ${id}? Esta acción no se puede deshacer.`,
+        confirmText: "Eliminar",
+        cancelText: "Cancelar",
+        type: "danger"
+      });
+      if (confirmed) {
         store.deleteInvoice(id);
+        uiToast.success(`Comprobante ${id} eliminado.`);
         renderMainLayout(container);
       }
     });
@@ -579,13 +587,7 @@ function executeConfirmSale(container) {
   discountPercent = 0;
   tipAmount = 0;
 
-  if (typeof window !== "undefined" && typeof window.alert === "function") {
-    try {
-      window.alert(`¡Venta realizada con éxito!\nComprobante emitido: ${savedInvoice?.id || newInvoice.id}\nTotal: ${settings.currency}${total.toFixed(2)}`);
-    } catch (e) {
-      // safe fallback in headless test runner
-    }
-  }
+  uiToast.success(`¡Venta realizada con éxito!\nComprobante emitido: ${savedInvoice?.id || newInvoice.id}\nTotal: ${settings.currency}${total.toFixed(2)}`);
 
   activeTab = "invoices";
   renderMainLayout(container);

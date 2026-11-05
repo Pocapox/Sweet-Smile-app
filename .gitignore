@@ -9,6 +9,12 @@ android_tools/
 *.apk
 *.idsig
 *.aab
+*.dex
+*.class
+compiled_res.zip
+base_app.apk
+unaligned.apk
+aligned.apk
 
 # Android intermediate build directories & build artifacts
 android_project/classes/
@@ -16,6 +22,8 @@ android_project/dex_out/
 android_project/gen/
 android_project/compiled_res.zip
 android_project/debug.keystore
+*.keystore
+
 
 # Agent workspace metadata & logs
 .agents/

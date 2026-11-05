@@ -62,3 +62,19 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Financial Charts Styling (Requirement R3) */
+.chart-day {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+.chart-day:hover, .chart-day:focus {
+  opacity: 1;
+}
+.chart-day.active-day rect:not([fill="transparent"]) {
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.22));
+}
+.bar-sales, .bar-expenses, .bar-profit {
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1), y 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+

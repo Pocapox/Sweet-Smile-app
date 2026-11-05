@@ -9,6 +9,7 @@ import { renderRecipesView } from './views/recipesView.js';
 import { renderInventoryView } from './views/inventoryView.js';
 import { renderChefAIView } from './views/chefAIView.js';
 import { renderCatalogShareView } from './views/catalogShareView.js';
+import { uiToast, uiModal } from './ui-feedback.js';
 
 class App {
   constructor() {
@@ -149,11 +150,10 @@ class App {
     });
 
     // New Timer Trigger
-    document.getElementById("btnNewTimer")?.addEventListener("click", () => {
-      const label = prompt("Nombre de la preparación o receta:", "Torta en Horno");
-      if (!label) return;
-      const mins = parseFloat(prompt("Minutos en horno:", "35")) || 15;
-      notifications.addBakingTimer(label, mins);
+    document.getElementById("btnNewTimer")?.addEventListener("click", async () => {
+      const timerData = await uiModal.showNewTimerModal();
+      if (!timerData) return;
+      notifications.addBakingTimer(timerData.label, timerData.minutes);
       this.renderActiveTimersList();
     });
   }
@@ -202,17 +202,24 @@ class App {
     });
 
     // Google Cloud / Drive connect trigger
-    document.getElementById("btnConnectGoogle")?.addEventListener("click", () => {
+    document.getElementById("btnConnectGoogle")?.addEventListener("click", async () => {
       const currentToken = googleSync.getGoogleConfig().accessToken || "";
       const currentEndpoint = googleSync.getGoogleConfig().cloudEndpoint || "";
-      const input = prompt("Introduce tu Google OAuth Token o endpoint de Google Cloud REST:", currentToken || currentEndpoint);
+      const input = await uiModal.prompt({
+        title: "Google Cloud / Drive",
+        message: "Introduce tu Google OAuth Token o endpoint de Google Cloud REST:",
+        defaultValue: currentToken || currentEndpoint,
+        placeholder: "https://... o token OAuth",
+        confirmText: "Guardar",
+        cancelText: "Cancelar"
+      });
       if (input !== null) {
         if (input.startsWith("http")) {
           googleSync.setGoogleConfig({ cloudEndpoint: input.trim(), accessToken: "" });
         } else {
           googleSync.connectGoogle({ accessToken: input.trim() });
         }
-        alert("Configuración de Google guardada con éxito.");
+        uiToast.success("Configuración de Google guardada con éxito.");
         this.updateSyncModalUI();
         this.updateCloudSyncUI();
       }
@@ -244,11 +251,11 @@ class App {
           reader.onload = async (ev) => {
             const ok = await googleSync.importBackup(ev.target.result);
             if (ok) {
-              alert("¡Copia de seguridad restaurada con éxito! Todos tus dispositivos sincronizados.");
+              uiToast.success("¡Copia de seguridad restaurada con éxito! Todos tus dispositivos sincronizados.");
               modal?.classList.add("hidden");
               this.handleRoute();
             } else {
-              alert("Archivo de copia de seguridad no válido.");
+              uiToast.error("Archivo de copia de seguridad no válido.");
             }
           };
           reader.readAsText(file);
@@ -266,11 +273,11 @@ class App {
       try {
         const res = await googleSync.syncNow();
         if (res.success) {
-          alert("Sincronización con Google Cloud completada con éxito.");
+          uiToast.success("Sincronización con Google Cloud completada con éxito.");
         } else if (res.reason === "offline") {
-          alert("Sin conexión a Internet. Los cambios se guardaron localmente y se sincronizarán al reconectar.");
+          uiToast.warning("Sin conexión a Internet. Los cambios se guardaron localmente y se sincronizarán al reconectar.");
         } else {
-          alert("Error durante la sincronización: " + (res.error || "Servidor no disponible"));
+          uiToast.error("Error durante la sincronización: " + (res.error || "Servidor no disponible"));
         }
       } catch (err) {
         console.error("Force sync failed:", err);
@@ -342,7 +349,7 @@ class App {
     saveToIndexedDB("app_state", store.state).catch(() => {});
 
     // If offline, queue mutation for cloud sync
-    if (!navigator.onLine && (event === "products_changed" || event === "inventory_changed" || event === "recipes_changed" || event === "invoices_changed" || event === "settings_changed")) {
+    if (!navigator.onLine && (event === "products_changed" || event === "inventory_changed" || event === "recipes_changed" || event === "invoices_changed" || event === "expenses_changed" || event === "settings_changed")) {
       googleSync.queueMutation({
         entity: event.replace("_changed", ""),
         action: "update",

@@ -400,6 +400,7 @@ export class GoogleSyncManager {
       inventory: rawState.inventory || [],
       recipes: rawState.recipes || [],
       invoices: rawState.invoices || [],
+      expenses: rawState.expenses || [],
       settings: rawState.settings || {}
     };
     return JSON.stringify(backupObj, null, 2);

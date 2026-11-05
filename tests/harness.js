@@ -12,7 +12,7 @@ export class MockElement {
     this.children = [];
     this.parentNode = null;
     this.eventListeners = {};
-    this._value = '';
+    this._value = attributes.value !== undefined ? String(attributes.value) : '';
     this._innerHTML = '';
     this._innerText = '';
     this._classList = new Set();
@@ -676,6 +676,8 @@ export function resetGlobalEnv() {
   mockWindow._printCalled = false;
   mockWindow.navigator.onLine = true;
   mockWindow.location.hash = '#pos';
+  delete mockWindow.prompt;
+  delete mockWindow._dialogPolyfillsInstalled;
 }
 
 export function resetStoreToSeed(store, seedData) {
@@ -685,6 +687,7 @@ export function resetStoreToSeed(store, seedData) {
     inventory: JSON.parse(JSON.stringify(seedData.INITIAL_INVENTORY)),
     recipes: JSON.parse(JSON.stringify(seedData.INITIAL_RECIPES)),
     invoices: JSON.parse(JSON.stringify(seedData.INITIAL_INVOICES)),
+    expenses: JSON.parse(JSON.stringify(seedData.INITIAL_EXPENSES || [])),
     settings: JSON.parse(JSON.stringify(seedData.INITIAL_SETTINGS)),
     isOnline: true,
     cloudSyncStatus: 'synced'

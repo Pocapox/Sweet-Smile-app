@@ -24,12 +24,14 @@ for (const arg of args) {
     nameFilter = arg.split('=')[1].toLowerCase();
   } else if (arg === '--verbose' || arg === '-v') {
     verbose = true;
+  } else if (arg === '--v12') {
+    tierFilter = 5;
   }
 }
 
 async function run() {
   console.log(`${BOLD}${CYAN}==============================================================${RESET}`);
-  console.log(`${BOLD}${CYAN}   🍰 SWEET SMILE PASTRY — 4-TIER E2E TEST RUNNER${RESET}`);
+  console.log(`${BOLD}${CYAN}   🍰 SWEET SMILE PASTRY — 5-TIER E2E TEST RUNNER (v1.2)${RESET}`);
   console.log(`${BOLD}${CYAN}==============================================================${RESET}`);
   if (tierFilter) console.log(`${DIM}Filter: Tier ${tierFilter}${RESET}`);
   if (nameFilter) console.log(`${DIM}Filter: Name contains "${nameFilter}"${RESET}`);
@@ -40,7 +42,9 @@ async function run() {
     { tier: 2, name: 'Tier 2: Boundary & Corner Cases (F1–F17)', path: './test_tier2.js' },
     { tier: 3, name: 'Tier 3: Cross-Feature Integration Workflows', path: './test_tier3.js' },
     { tier: 4, name: 'Tier 4: Real-World Bakery Scenarios', path: './test_tier4.js' },
-    { tier: 5, name: 'Tier 5: Adversarial Stress Hardening', path: './test_tier5_adversarial.js', optional: true }
+    { tier: 5, name: 'Tier 5: Adversarial Stress Hardening', path: './test_tier5_adversarial.js', optional: true },
+    { tier: 5, name: 'Tier 5: v1.2 Comprehensive E2E (R1–R3)', path: './test_v12_comprehensive_e2e.js', optional: true },
+    { tier: 5, name: 'Tier 5: M4 E2E Empirical Adversarial Challenge', path: './empirical_challenge_m4_v12.js', optional: true }
   ];
 
   const results = [];

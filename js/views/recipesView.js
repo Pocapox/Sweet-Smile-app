@@ -3,6 +3,7 @@ import { store } from '../store.js';
 import { CostingEngine } from '../costing.js';
 import { OCRAIEngine } from '../ocr-ai.js';
 import { RecipePdfExporter } from '../pdf-export.js';
+import { uiToast, uiModal } from '../ui-feedback.js';
 
 let selectedRecipeId = "rec-042"; // Pastel Selva Negra
 let currentCategoryFilter = "all";
@@ -462,27 +463,49 @@ function attachRecipesEvents(container) {
         }
       }
       store.saveRecipe(currentRecipe);
-      alert("¡Receta y costos actualizados con éxito!");
+      uiToast.success("¡Receta y costos actualizados con éxito!");
       renderRecipesView(container);
     }
   });
 
   // Add ingredient row
-  container.querySelector("#btnAddIngredientRow")?.addEventListener("click", () => {
+  container.querySelector("#btnAddIngredientRow")?.addEventListener("click", async () => {
     if (!currentRecipe) return;
-    const name = prompt("Nombre del ingrediente o insumo:", "Azúcar Moreno");
-    if (!name) return;
-    const qty = parseFloat(prompt("Cantidad:", "0.25")) || 0.1;
-    const unit = prompt("Unidad (kg, L, unid, kit):", "kg") || "kg";
-    const unitCost = parseFloat(prompt("Costo por unidad ($):", "2.50")) || 1.0;
+
+    // Headless test harness compatibility (e.g. T5-23 sets mockWindow.prompt)
+    if (typeof window !== "undefined" && typeof window.prompt === "function" && 
+        window.prompt !== window._fallbackPrompt && 
+        window.prompt !== window._nativePrompt) {
+      const name = window.prompt("Nombre del ingrediente o insumo:", "Azúcar Moreno");
+      if (!name) return;
+      const qty = parseFloat(window.prompt("Cantidad:", "0.25")) || 0.1;
+      const unit = window.prompt("Unidad (kg, L, unid, kit):", "kg") || "kg";
+      const unitCost = parseFloat(window.prompt("Costo por unidad ($):", "2.50")) || 1.0;
+
+      currentRecipe.ingredients.push({
+        id: "ing-" + Date.now(),
+        name,
+        quantity: qty,
+        unit,
+        unitCost,
+        totalCost: Math.round(qty * unitCost * 100) / 100
+      });
+      store.saveRecipe(currentRecipe);
+      renderRecipesView(container);
+      return;
+    }
+
+    // Modern in-app modal form
+    const result = await uiModal.showAddIngredientModal();
+    if (!result) return;
 
     currentRecipe.ingredients.push({
       id: "ing-" + Date.now(),
-      name,
-      quantity: qty,
-      unit,
-      unitCost,
-      totalCost: Math.round(qty * unitCost * 100) / 100
+      name: result.name,
+      quantity: result.quantity,
+      unit: result.unit,
+      unitCost: result.unitCost,
+      totalCost: Math.round(result.quantity * result.unitCost * 100) / 100
     });
     store.saveRecipe(currentRecipe);
     renderRecipesView(container);
@@ -541,11 +564,11 @@ function attachRecipesEvents(container) {
 
       const saved = store.saveRecipe(extracted);
       selectedRecipeId = saved.id;
-      alert(`¡Receta escaneada con éxito!\n"${saved.name}" con ${saved.ingredients.length} ingredientes agregada.`);
+      uiToast.success(`¡Receta escaneada con éxito!\n"${saved.name}" con ${saved.ingredients.length} ingredientes agregada.`);
       renderRecipesView(container);
     } catch (err) {
       loading?.classList.add("hidden");
-      alert(`Error al procesar la imagen de receta: ${err.message || err}`);
+      uiToast.error(`Error al procesar la imagen de receta: ${err.message || err}`);
     }
   };
 
@@ -578,7 +601,7 @@ function attachRecipesEvents(container) {
         };
         reader.onerror = () => {
           loading?.classList.add("hidden");
-          alert("Error al leer el archivo de imagen.");
+          uiToast.error("Error al leer el archivo de imagen.");
         };
         reader.readAsDataURL(file);
       } else {
@@ -639,11 +662,11 @@ function attachRecipesEvents(container) {
 
       const saved = store.saveRecipe(extracted);
       selectedRecipeId = saved.id;
-      alert(`¡Receta importada de ${extracted.platform}!\n"${saved.name}" agregada a tu catálogo.`);
+      uiToast.success(`¡Receta importada de ${extracted.platform}!\n"${saved.name}" agregada a tu catálogo.`);
       renderRecipesView(container);
     } catch (err) {
       loading?.classList.add("hidden");
-      alert(`Error al importar la receta: ${err.message || err}`);
+      uiToast.error(`Error al importar la receta: ${err.message || err}`);
     }
   };
 

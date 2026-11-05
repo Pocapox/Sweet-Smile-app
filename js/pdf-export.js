@@ -1,6 +1,7 @@
 // js/pdf-export.js - Professional Recipe PDF & Kitchen Print Sheet Generator
 import { CostingEngine } from './costing.js';
 import { store } from './store.js';
+import { uiToast } from './ui-feedback.js';
 
 export class RecipePdfExporter {
   /**
@@ -13,7 +14,7 @@ export class RecipePdfExporter {
 
     const printWindow = window.open("", "_blank");
     if (!printWindow) {
-      alert("Por favor permite ventanas emergentes para generar el PDF de la receta.");
+      uiToast.warning("Por favor permite ventanas emergentes para generar el PDF de la receta.");
       return;
     }
 

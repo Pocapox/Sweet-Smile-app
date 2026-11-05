@@ -495,6 +495,49 @@ export const INITIAL_INVOICES = [
   }
 ];
 
+export const INITIAL_EXPENSES = [
+  {
+    id: "EXP-001",
+    concept: "Compra saco harina pastelera y mantequilla 82%",
+    category: "Insumos",
+    amount: 85.50,
+    date: "2026-11-01",
+    paymentMethod: "Transferencia Bancaria",
+    receipt: "FAC-PROV-901",
+    notes: "Molinos del Molino - Calidad Premium"
+  },
+  {
+    id: "EXP-002",
+    concept: "Suministro gas natural hornos de convección",
+    category: "Servicios",
+    amount: 32.00,
+    date: "2026-11-02",
+    paymentMethod: "Efectivo",
+    receipt: "REC-GAS-44",
+    notes: "Consumo mensual obrador"
+  },
+  {
+    id: "EXP-003",
+    concept: "Lote cajas kraft 22cm con ventana y cintas",
+    category: "Empaques",
+    amount: 24.50,
+    date: "2026-11-03",
+    paymentMethod: "Tarjeta de Débito",
+    receipt: "TK-EMP-102",
+    notes: "Empaques Dulces S.A."
+  },
+  {
+    id: "EXP-004",
+    concept: "Mantenimiento preventivo batidora planetaria 20L",
+    category: "Mantenimiento",
+    amount: 45.00,
+    date: "2026-11-03",
+    paymentMethod: "Efectivo",
+    receipt: "SRV-883",
+    notes: "Engrase de piñones y calibración de velocidad"
+  }
+];
+
 export const INITIAL_SETTINGS = {
   storeName: "Sweet Smile Pastry & Bakery",
   tagline: "Repostería Fina & Obrador Artesanal",
